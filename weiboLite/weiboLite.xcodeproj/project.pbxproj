@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14215F8A200DCBF000C6B746 /* AppDelegate.swift */; };
-		14215F8D200DCBF000C6B746 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14215F8C200DCBF000C6B746 /* ViewController.swift */; };
 		14215F90200DCBF000C6B746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14215F8E200DCBF000C6B746 /* Main.storyboard */; };
 		14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14215F91200DCBF000C6B746 /* Assets.xcassets */; };
 		14215F95200DCBF000C6B746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14215F93200DCBF000C6B746 /* LaunchScreen.storyboard */; };
+		14216018200E446100C6B746 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14216017200E446100C6B746 /* MainViewController.swift */; };
+		1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14216029200E6CFB00C6B746 /* ProfileViewController.swift */; };
+		1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421602B200E6D0800C6B746 /* MessageViewController.swift */; };
+		1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421602D200E6D1300C6B746 /* HomeViewController.swift */; };
+		14216030200E6D1E00C6B746 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421602F200E6D1E00C6B746 /* DiscoverViewController.swift */; };
+		14216032200E6DCC00C6B746 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14216031200E6DCC00C6B746 /* Home.storyboard */; };
+		147CA345200E6E9F00543180 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA343200E6E9F00543180 /* Message.storyboard */; };
+		147CA34A200E6FB500543180 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA348200E6FB500543180 /* Compose.storyboard */; };
+		147CA34C200E6FED00543180 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34B200E6FED00543180 /* Discover.storyboard */; };
+		147CA34F200E702600543180 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34D200E702600543180 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14215F87200DCBF000C6B746 /* weiboLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14215F8A200DCBF000C6B746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14215F8C200DCBF000C6B746 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14215F8F200DCBF000C6B746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14215F91200DCBF000C6B746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14215F94200DCBF000C6B746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14215F96200DCBF000C6B746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14216017200E446100C6B746 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		14216029200E6CFB00C6B746 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1421602B200E6D0800C6B746 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		1421602D200E6D1300C6B746 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1421602F200E6D1E00C6B746 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		14216031200E6DCC00C6B746 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		147CA344200E6E9F00543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Message.storyboard; sourceTree = "<group>"; };
+		147CA349200E6FB500543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
+		147CA34B200E6FED00543180 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		147CA34E200E702600543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +72,8 @@
 		14215F89200DCBF000C6B746 /* weiboLite */ = {
 			isa = PBXGroup;
 			children = (
+				14216011200E440400C6B746 /* Classes */,
 				14215F8A200DCBF000C6B746 /* AppDelegate.swift */,
-				14215F8C200DCBF000C6B746 /* ViewController.swift */,
 				14215F8E200DCBF000C6B746 /* Main.storyboard */,
 				14215F91200DCBF000C6B746 /* Assets.xcassets */,
 				14215F93200DCBF000C6B746 /* LaunchScreen.storyboard */,
@@ -63,6 +81,67 @@
 			);
 			path = weiboLite;
 			sourceTree = "<group>";
+		};
+		14216011200E440400C6B746 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14216025200E6CD400C6B746 /* Discover */,
+				14216028200E6CD400C6B746 /* Home */,
+				14216027200E6CD400C6B746 /* Message */,
+				14216026200E6CD400C6B746 /* Profile */,
+				14216016200E440400C6B746 /* Main */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		14216016200E440400C6B746 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				147CA348200E6FB500543180 /* Compose.storyboard */,
+				14216017200E446100C6B746 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		14216025200E6CD400C6B746 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				147CA34B200E6FED00543180 /* Discover.storyboard */,
+				1421602F200E6D1E00C6B746 /* DiscoverViewController.swift */,
+			);
+			name = Discover;
+			path = Classes/Discover;
+			sourceTree = SOURCE_ROOT;
+		};
+		14216026200E6CD400C6B746 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				147CA34D200E702600543180 /* Profile.storyboard */,
+				14216029200E6CFB00C6B746 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			path = Classes/Profile;
+			sourceTree = SOURCE_ROOT;
+		};
+		14216027200E6CD400C6B746 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				147CA343200E6E9F00543180 /* Message.storyboard */,
+				1421602B200E6D0800C6B746 /* MessageViewController.swift */,
+			);
+			name = Message;
+			path = Classes/Message;
+			sourceTree = SOURCE_ROOT;
+		};
+		14216028200E6CD400C6B746 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14216031200E6DCC00C6B746 /* Home.storyboard */,
+				1421602D200E6D1300C6B746 /* HomeViewController.swift */,
+			);
+			name = Home;
+			path = Classes/Home;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -124,8 +203,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14215F95200DCBF000C6B746 /* LaunchScreen.storyboard in Resources */,
+				147CA34A200E6FB500543180 /* Compose.storyboard in Resources */,
+				147CA34F200E702600543180 /* Profile.storyboard in Resources */,
+				14216032200E6DCC00C6B746 /* Home.storyboard in Resources */,
 				14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */,
 				14215F90200DCBF000C6B746 /* Main.storyboard in Resources */,
+				147CA34C200E6FED00543180 /* Discover.storyboard in Resources */,
+				147CA345200E6E9F00543180 /* Message.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14215F8D200DCBF000C6B746 /* ViewController.swift in Sources */,
+				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
+				1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */,
 				14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */,
+				14216030200E6D1E00C6B746 /* DiscoverViewController.swift in Sources */,
+				1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */,
+				14216018200E446100C6B746 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +246,30 @@
 				14215F94200DCBF000C6B746 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		147CA343200E6E9F00543180 /* Message.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				147CA344200E6E9F00543180 /* Base */,
+			);
+			name = Message.storyboard;
+			sourceTree = "<group>";
+		};
+		147CA348200E6FB500543180 /* Compose.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				147CA349200E6FB500543180 /* Base */,
+			);
+			name = Compose.storyboard;
+			sourceTree = "<group>";
+		};
+		147CA34D200E702600543180 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				147CA34E200E702600543180 /* Base */,
+			);
+			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

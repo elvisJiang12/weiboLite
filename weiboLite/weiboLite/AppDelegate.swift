@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //设置全局UITabbar的颜色
+        UITabBar.appearance().tintColor = UIColor.orange
+        
         return true
     }
 
@@ -42,5 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+func printLog <T> (_ message : T,
+                 file : String = #file,
+                 funcName : String = #function,
+                 lineNum : Int = #line) {
+    
+    let fileName = (file as NSString).lastPathComponent
+    
+    print("log: \(fileName): \(funcName): line :\(lineNum)---\(message)")
+    
 }
 
