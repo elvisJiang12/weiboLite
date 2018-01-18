@@ -10,7 +10,9 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    lazy var composeBtn : UIButton = UIButton()
+    //MARK: - 懒加载创建数据
+    lazy var composeBtn : UIButton = UIButton(imageName: "tabbar_compose_icon_add",
+                                              bgImageName: "tabbar_compose_button")
     lazy var imageNames = ["tabbar_home",
                            "tabbar_message_center",
                            "",
@@ -22,6 +24,8 @@ class MainViewController: UITabBarController {
         
         
         setupComposeBtn()
+        
+        
     
         
         
@@ -31,7 +35,9 @@ class MainViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        /*已通过storyboard直接设置
         setupTabbarItems()
+         */
         
     }
 
@@ -43,22 +49,19 @@ extension MainViewController {
     
     //设置发布按钮
     private func setupComposeBtn() {
-        //设置发布按钮的属性
-        composeBtn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button"), for: .normal)
-        composeBtn.setBackgroundImage(UIImage.init(named: "tabbar_compose_button_highlighted"), for: .highlighted)
-        
-        composeBtn.setImage(UIImage.init(named: "tabbar_compose_icon_add"), for: .normal)
-        composeBtn.setImage(UIImage.init(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
-        
-        //设置发布按钮的frame
-        composeBtn.sizeToFit() //根据图片的大小设置尺寸
+
+        //设置发布按钮的位置
         composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
         
         //将composeBtn添加到tabBar中
         tabBar.addSubview(composeBtn)
+        
+        //监听发布按钮的点击操作
+        //Selector的两种写法: 1>#selector(composeBtnClick);2>#selector(MainViewController.composeBtnClick)
+        composeBtn.addTarget(self, action: #selector(MainViewController.composeBtnClick), for: .touchUpInside)
     }
     
-    //设置tabbar的按钮
+    //设置tabbar的按钮被选中时的highlighted图片
     private func setupTabbarItems() {
         //遍历tabBar的所有Item
         for i in 0..<tabBar.items!.count {
@@ -75,5 +78,17 @@ extension MainViewController {
             item.selectedImage = UIImage.init(named: imageNames[i] + "_highlighted")
         }
     }
+    
+}
+
+//MARK: - 事件监听
+extension MainViewController {
+    
+    @objc private func composeBtnClick() {
+        printLog("用户点击了composebtn")
+    }
+    
+    
+    
     
 }

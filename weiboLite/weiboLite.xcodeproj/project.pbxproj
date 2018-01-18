@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091C200F29CF0035150C /* UIButton-Extension.swift */; };
+		140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */; };
+		140E0924200F54550035150C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E0923200F54550035150C /* VisitorView.swift */; };
+		140E0926200F54950035150C /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140E0925200F54950035150C /* VisitorView.xib */; };
 		14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14215F8A200DCBF000C6B746 /* AppDelegate.swift */; };
 		14215F90200DCBF000C6B746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14215F8E200DCBF000C6B746 /* Main.storyboard */; };
 		14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14215F91200DCBF000C6B746 /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140E091C200F29CF0035150C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorBaseViewController.swift; sourceTree = "<group>"; };
+		140E0923200F54550035150C /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		140E0925200F54950035150C /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		14215F87200DCBF000C6B746 /* weiboLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14215F8A200DCBF000C6B746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14215F8F200DCBF000C6B746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +61,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140E091A200F29CF0035150C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				140E091B200F29CF0035150C /* Category */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		140E091B200F29CF0035150C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				140E091C200F29CF0035150C /* UIButton-Extension.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		140E091E200F4CFD0035150C /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */,
+				140E0923200F54550035150C /* VisitorView.swift */,
+				140E0925200F54950035150C /* VisitorView.xib */,
+			);
+			path = Visitor;
+			sourceTree = "<group>";
+		};
 		14215F7E200DCBF000C6B746 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +119,7 @@
 		14216011200E440400C6B746 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				140E091A200F29CF0035150C /* Tools */,
 				14216025200E6CD400C6B746 /* Discover */,
 				14216028200E6CD400C6B746 /* Home */,
 				14216027200E6CD400C6B746 /* Message */,
@@ -97,6 +132,7 @@
 		14216016200E440400C6B746 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				140E091E200F4CFD0035150C /* Visitor */,
 				147CA348200E6FB500543180 /* Compose.storyboard */,
 				14216017200E446100C6B746 /* MainViewController.swift */,
 			);
@@ -210,6 +246,7 @@
 				14215F90200DCBF000C6B746 /* Main.storyboard in Resources */,
 				147CA34C200E6FED00543180 /* Discover.storyboard in Resources */,
 				147CA345200E6E9F00543180 /* Message.storyboard in Resources */,
+				140E0926200F54950035150C /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,9 +258,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
+				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,
 				1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */,
 				14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */,
+				140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */,
 				14216030200E6D1E00C6B746 /* DiscoverViewController.swift in Sources */,
+				140E0924200F54550035150C /* VisitorView.swift in Sources */,
 				1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */,
 				14216018200E446100C6B746 /* MainViewController.swift in Sources */,
 			);

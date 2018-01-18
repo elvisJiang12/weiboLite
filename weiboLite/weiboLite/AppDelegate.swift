@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+///自定义Log
 func printLog <T> (_ message : T,
                  file : String = #file,
                  funcName : String = #function,
@@ -54,7 +55,7 @@ func printLog <T> (_ message : T,
     
     let fileName = (file as NSString).lastPathComponent
     
-    print("log: \(fileName): \(funcName): line :\(lineNum)---\(message)")
+    print("log: ClassName:\(fileName)---funcName:\(funcName)---line:\(lineNum)---\(message)")
     
 }
 
