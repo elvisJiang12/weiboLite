@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140AF8222010B019000E9CE4 /* UIBarButtonItem-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF8212010B019000E9CE4 /* UIBarButtonItem-Extention.swift */; };
+		140AF8242010B5EF000E9CE4 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF8232010B5EF000E9CE4 /* TitleButton.swift */; };
+		140AF8282010DB91000E9CE4 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF8262010DB90000E9CE4 /* PopoverViewController.swift */; };
+		140AF8292010DB91000E9CE4 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140AF8272010DB90000E9CE4 /* PopoverViewController.xib */; };
+		140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF82A2010E95D000E9CE4 /* JWWPresentationController.swift */; };
+		140AF82D2014F053000E9CE4 /* JWWPopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF82C2014F053000E9CE4 /* JWWPopoverAnimator.swift */; };
 		140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091C200F29CF0035150C /* UIButton-Extension.swift */; };
 		140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */; };
 		140E0924200F54550035150C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E0923200F54550035150C /* VisitorView.swift */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140AF8212010B019000E9CE4 /* UIBarButtonItem-Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extention.swift"; sourceTree = "<group>"; };
+		140AF8232010B5EF000E9CE4 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		140AF8262010DB90000E9CE4 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		140AF8272010DB90000E9CE4 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		140AF82A2010E95D000E9CE4 /* JWWPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWWPresentationController.swift; sourceTree = "<group>"; };
+		140AF82C2014F053000E9CE4 /* JWWPopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWWPopoverAnimator.swift; sourceTree = "<group>"; };
 		140E091C200F29CF0035150C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorBaseViewController.swift; sourceTree = "<group>"; };
 		140E0923200F54550035150C /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -61,10 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140AF8252010DB69000E9CE4 /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				140AF8262010DB90000E9CE4 /* PopoverViewController.swift */,
+				140AF8272010DB90000E9CE4 /* PopoverViewController.xib */,
+				140AF82A2010E95D000E9CE4 /* JWWPresentationController.swift */,
+				140AF82C2014F053000E9CE4 /* JWWPopoverAnimator.swift */,
+			);
+			path = UIPopover;
+			sourceTree = "<group>";
+		};
 		140E091A200F29CF0035150C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				140E091B200F29CF0035150C /* Category */,
+				140AF8232010B5EF000E9CE4 /* TitleButton.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -73,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				140E091C200F29CF0035150C /* UIButton-Extension.swift */,
+				140AF8212010B019000E9CE4 /* UIBarButtonItem-Extention.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -172,6 +197,7 @@
 		14216028200E6CD400C6B746 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				140AF8252010DB69000E9CE4 /* UIPopover */,
 				14216031200E6DCC00C6B746 /* Home.storyboard */,
 				1421602D200E6D1300C6B746 /* HomeViewController.swift */,
 			);
@@ -205,6 +231,7 @@
 		14215F7F200DCBF000C6B746 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JWW;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Elvis;
@@ -242,6 +269,7 @@
 				147CA34A200E6FB500543180 /* Compose.storyboard in Resources */,
 				147CA34F200E702600543180 /* Profile.storyboard in Resources */,
 				14216032200E6DCC00C6B746 /* Home.storyboard in Resources */,
+				140AF8292010DB91000E9CE4 /* PopoverViewController.xib in Resources */,
 				14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */,
 				14215F90200DCBF000C6B746 /* Main.storyboard in Resources */,
 				147CA34C200E6FED00543180 /* Discover.storyboard in Resources */,
@@ -257,15 +285,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */,
 				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
 				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,
 				1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */,
 				14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */,
+				140AF8282010DB91000E9CE4 /* PopoverViewController.swift in Sources */,
+				140AF8242010B5EF000E9CE4 /* TitleButton.swift in Sources */,
+				140AF82D2014F053000E9CE4 /* JWWPopoverAnimator.swift in Sources */,
 				140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */,
 				14216030200E6D1E00C6B746 /* DiscoverViewController.swift in Sources */,
 				140E0924200F54550035150C /* VisitorView.swift in Sources */,
 				1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */,
 				14216018200E446100C6B746 /* MainViewController.swift in Sources */,
+				140AF8222010B019000E9CE4 /* UIBarButtonItem-Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

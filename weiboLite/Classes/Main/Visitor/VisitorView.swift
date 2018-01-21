@@ -22,12 +22,15 @@ class VisitorView: UIView {
     @IBOutlet var rotationView: UIImageView!
     @IBOutlet var iconView: UIImageView!
     @IBOutlet var tipLabel: UILabel!
+    @IBOutlet var registerBtn: UIButton!
+    @IBOutlet var loginBtn: UIButton!
     
     //自定义函数
     func setupVisitorViewInfo(iconName: String, text: String) {
         iconView.image = UIImage.init(named: iconName)
         tipLabel.text = text
         rotationView.isHidden = true
+        
     }
     
     //创建旋转动画

@@ -85,6 +85,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="iconView" destination="wlV-jd-7ws" id="0tq-aI-jYX"/>
+                <outlet property="loginBtn" destination="BBc-Wj-eiG" id="X9S-h0-8VK"/>
+                <outlet property="registerBtn" destination="fNX-yi-omV" id="KDf-33-8hd"/>
                 <outlet property="rotationView" destination="sZs-4n-y8t" id="u9T-5P-RTX"/>
                 <outlet property="tipLabel" destination="QDY-xK-ZEv" id="Qbv-7f-XbH"/>
             </connections>
