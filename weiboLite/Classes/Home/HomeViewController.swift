@@ -12,7 +12,13 @@ class HomeViewController: VisitorBaseViewController {
     
     //MARK:- 设置懒加载数据
     private lazy var titleBtn = TitleButton()
-    private lazy var popAnimator = JWWPopoverAnimator()
+    
+    //注意: 在闭包中如果使用当前对象的属性或调用方法, 也需要加self
+    //总结: 两个地方不能省略self: 1>如果一个函数中变量名出线歧义(相同名);2>在闭包中使用当前对象的属性和方法
+    private lazy var popAnimator = JWWPopoverAnimator { (isSelected) in
+        //使用闭包传递titleBtn的状态
+        self.titleBtn.isSelected = isSelected
+    }
     
 
     //MARK:- 系统回调函数
@@ -62,8 +68,8 @@ extension HomeViewController {
     ///监听titleButton的点击
     @objc private func titleBtnClick(titleBtn: TitleButton) {
         
-        //设置按钮状态
-        titleBtn.isSelected = !titleBtn.isSelected
+        //设置按钮状态,不能使用此方法, 应该用闭包传递
+        //titleBtn.isSelected = isSelected
         
         //1.创建弹出的控制器
         let popoverVc = PopoverViewController()

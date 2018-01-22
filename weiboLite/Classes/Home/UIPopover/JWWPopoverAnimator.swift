@@ -12,6 +12,17 @@ class JWWPopoverAnimator: NSObject {
     
     //设置懒加载数据
     private lazy var isPresented : Bool = false
+    
+    
+    var callBack : ((_ isSelected : Bool)->())?
+    //自定义callBack构造函数
+//    override init() {
+//    }
+    //注意: 如果自定义了一个构造函数,但是没有对默认的init()构造函数进行重写,那么自定义的构造函数会覆盖默认的init()构造函数
+    init(callBack : @escaping (_ isSelected : Bool)->()) {
+        self.callBack = callBack
+    }
+    
 
 }
 
@@ -32,12 +43,20 @@ extension JWWPopoverAnimator : UIViewControllerTransitioningDelegate {
     ///自定义弹出的动画
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresented = true
+        
+        //使用闭包对外传递弹出窗口的状态
+        callBack!(isPresented)
+        
         return self
     }
     
     ///自定义消失的动画
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresented = false
+        
+        //使用闭包对外传递弹出窗口的状态
+        callBack!(isPresented)
+        
         return self
     }
     
@@ -49,7 +68,7 @@ extension JWWPopoverAnimator : UIViewControllerAnimatedTransitioning {
     
     ///动画执行的时间
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.7
+        return 0.6
     }
     
     ///获取"转场的上下文": 可以通过转场的上下文获取弹出的view和消失的view
