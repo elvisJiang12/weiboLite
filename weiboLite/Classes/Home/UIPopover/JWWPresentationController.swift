@@ -48,7 +48,7 @@ extension JWWPresentationController {
         containerView!.insertSubview(coverView, belowSubview: presentedView!)
         //containerView!.insertSubview(coverView, at: 0)
         
-        //添加控件的点击手势
+        //添加控件的点击手势,监听蒙版的点击
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(dismissCoverView))
         tapGes.numberOfTouchesRequired = 1    //手指数
         tapGes.numberOfTapsRequired = 1       //点击数

@@ -15,9 +15,9 @@ class HomeViewController: VisitorBaseViewController {
     
     //注意: 在闭包中如果使用当前对象的属性或调用方法, 也需要加self
     //总结: 两个地方不能省略self: 1>如果一个函数中变量名出线歧义(相同名);2>在闭包中使用当前对象的属性和方法
-    private lazy var popAnimator = JWWPopoverAnimator { (isSelected) in
+    private lazy var popAnimator = JWWPopoverAnimator {[weak self] (isSelected) in
         //使用闭包传递titleBtn的状态
-        self.titleBtn.isSelected = isSelected
+        self?.titleBtn.isSelected = isSelected
     }
     
 
@@ -27,7 +27,6 @@ class HomeViewController: VisitorBaseViewController {
         
         
         if !isLogin {
-            printLog(isLogin)
             //首页未登录时的访客视图, 添加旋转动画
             visitorView.addRotationAnim()
             

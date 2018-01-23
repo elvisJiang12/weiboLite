@@ -14,7 +14,7 @@ class VisitorBaseViewController: UITableViewController {
     lazy var visitorView = VisitorView.createVisitorView()
     
     //MARK: - 登录标识(默认未登录)
-    var isLogin : Bool = true
+    var isLogin : Bool = false
     
     //系统回调函数, 如果未登录,回调visitorView访客视图
     override func loadView() {
@@ -75,7 +75,15 @@ extension VisitorBaseViewController {
     
     ///监听点击"登录"按钮
     @objc private func loginBtnClick() {
-        printLog("loginBtnClick")
+        
+        //1.创建授权登录的控制器
+        let oauthVc = OAuthViewController()
+        
+        //2.包装导航控制器
+        let oauthNav = UINavigationController(rootViewController: oauthVc)
+        
+        //3.弹出控制器,Presents a view controller modally
+        present(oauthNav, animated: true, completion: nil)
     }
     
     
