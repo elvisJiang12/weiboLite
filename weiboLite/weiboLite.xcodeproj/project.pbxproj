@@ -34,6 +34,8 @@
 		14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92A2017662400F4CE5D /* OAuthViewController.swift */; };
 		14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DEC92B2017662400F4CE5D /* OAuthViewController.xib */; };
 		14DEC92F20176FAC00F4CE5D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92E20176FAC00F4CE5D /* Common.swift */; };
+		14DEC9312018664E00F4CE5D /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC9302018664D00F4CE5D /* NetworkTools.swift */; };
+		14DEC9332018770E00F4CE5D /* UserAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC9322018770E00F4CE5D /* UserAccessToken.swift */; };
 		AE81070E6886CE0C41ED7915 /* Pods_weiboLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31763208653B96A60F8B445 /* Pods_weiboLite.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		14DEC92A2017662400F4CE5D /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		14DEC92B2017662400F4CE5D /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		14DEC92E20176FAC00F4CE5D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		14DEC9302018664D00F4CE5D /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		14DEC9322018770E00F4CE5D /* UserAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccessToken.swift; sourceTree = "<group>"; };
 		4AB306C2E1FBCC66B7772F63 /* Pods-weiboLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weiboLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-weiboLite/Pods-weiboLite.release.xcconfig"; sourceTree = "<group>"; };
 		653EE2B166D9C5760102EF4A /* Pods-weiboLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weiboLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weiboLite/Pods-weiboLite.debug.xcconfig"; sourceTree = "<group>"; };
 		A31763208653B96A60F8B445 /* Pods_weiboLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weiboLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,7 @@
 		140E091A200F29CF0035150C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				14DEC9302018664D00F4CE5D /* NetworkTools.swift */,
 				140E091B200F29CF0035150C /* Category */,
 				140AF8232010B5EF000E9CE4 /* TitleButton.swift */,
 				14DEC92E20176FAC00F4CE5D /* Common.swift */,
@@ -225,6 +230,7 @@
 			children = (
 				14DEC92A2017662400F4CE5D /* OAuthViewController.swift */,
 				14DEC92B2017662400F4CE5D /* OAuthViewController.xib */,
+				14DEC9322018770E00F4CE5D /* UserAccessToken.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -391,6 +397,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DEC92F20176FAC00F4CE5D /* Common.swift in Sources */,
+				14DEC9312018664E00F4CE5D /* NetworkTools.swift in Sources */,
+				14DEC9332018770E00F4CE5D /* UserAccessToken.swift in Sources */,
 				140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */,
 				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
 				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,

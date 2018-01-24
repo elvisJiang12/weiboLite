@@ -21,8 +21,7 @@ class OAuthViewController: UIViewController {
         setupNavigationBar()
         
         //加载授权登录界面
-        webView.loadRequest(URLRequest.init(url: URL(string: "https://api.weibo.com/oauth2/authorize?client_id=\(app_key)&redirect_uri=\(redirect_uri)")!))
-            
+        loadPage()
         
 
     }
@@ -45,6 +44,22 @@ extension OAuthViewController {
         navigationItem.title = "授权登录"
     }
     
+    ///加载授权登录页面
+    private func loadPage() {
+        
+        let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(app_key)&redirect_uri=\(redirect_uri)"
+        
+        guard let url = URL.init(string: urlString) else {
+            return
+        }
+        
+        //创建urlRequest对象
+        let request = URLRequest.init(url: url)
+        
+        //加载request
+        webView.loadRequest(request)
+    }
+    
 }
 
 //MARK:- 事件监听
@@ -55,10 +70,12 @@ extension OAuthViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //自动填充登录的用户名和密码
     @objc private func fillItemClick() {
-        //自动填充登录的用户名和密码
+        
+        //书写javaScript代码
         let jsCode = "document.getElementById('userId').value='yehshow@hotmail.com';document.getElementById('passwd').value='iosxuexi';"
-        //执行JavaScript代码
+        //webView执行js代码
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
 
@@ -82,5 +99,57 @@ extension OAuthViewController : UIWebViewDelegate {
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         SVProgressHUD.dismiss()
     }
+    
+    //当准备加载某个页面时,会调用此方法
+    //返回true: 继续加载,   返回false: 停止加载
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        //获取加载网页的url
+        guard let url = request.url else {
+            return true
+        }
+        
+        //url转为String类型
+        let urlString = url.absoluteString
+        //判断urlString中是否包含"code="
+        guard urlString.contains("code=") else {
+            return true
+        }
+        
+        //截取code
+        let code = urlString.components(separatedBy: "code=").last!
+        
+        //获取accessToken
+        loadAccessToken(code: code)
+        
+        //获取到code后, 不需要再继续加载网页
+        return false
+    }
 
+}
+
+//MARK:- 请求AccessToken
+extension OAuthViewController {
+    private func loadAccessToken(code: String) {
+        NetworkTools.shareInstance.loadAccessToken(code: code) { (result, error) in
+            
+            //error校验
+            if error != nil {
+                printLog(error)
+                return
+            }
+            
+            //获取授权数据
+            guard let dict = result else {
+                printLog("没有获取到授权的用户数据")
+                return
+            }
+            
+            //将字典转为UserAccount模型
+            let userAccessToken = UserAccessToken.init(dict: dict)
+            
+            printLog(userAccessToken)
+        }
+    }
+    
 }
