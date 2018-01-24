@@ -57,7 +57,7 @@ func printLog <T> (_ message : T,
     
     let fileName = (file as NSString).lastPathComponent
     
-    print("自定义log: ClassName:\(fileName)---funcName:\(funcName)---line:\(lineNum)---\(message)")
+    print("自定义log: ClassName:\(fileName)--->funcName:\(funcName)--->line:\(lineNum)--->\(message)")
     
 }
 

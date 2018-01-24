@@ -128,7 +128,7 @@ extension OAuthViewController : UIWebViewDelegate {
 
 }
 
-//MARK:- 请求AccessToken
+//MARK:- 请求AccessToken https://api.weibo.com/oauth2/access_token
 extension OAuthViewController {
     private func loadAccessToken(code: String) {
         NetworkTools.shareInstance.loadAccessToken(code: code) { (result, error) in
@@ -146,10 +146,47 @@ extension OAuthViewController {
             }
             
             //将字典转为UserAccount模型
-            let userAccessToken = UserAccessToken.init(dict: dict)
+            let userInfo = UserAccount.init(dict: dict)
             
-            printLog(userAccessToken)
+            //请求用户的信息
+            self.loadUserInfo(userInfo: userInfo)
         }
     }
     
+}
+
+//MARK:- 请求用户信息 https://api.weibo.com/2/users/show.json
+extension OAuthViewController {
+    private func loadUserInfo(userInfo : UserAccount) {
+        
+        //参数的校验
+        guard let access_token = userInfo.access_token else {
+            printLog("token获取失败")
+            return
+        }
+        guard let uid = userInfo.uid else {
+            printLog("uid获取失败")
+            return
+        }
+        
+        //发送网络请求
+        NetworkTools.shareInstance.loadUserInfo(access_token: access_token, uid: uid) { (result, error) in
+            //error校验
+            if error != nil {
+                printLog(error)
+                return
+            }
+            
+            //获取用户信息
+            guard let infoDict = result else {
+                printLog("没有获取到userInfo")
+                return
+            }
+            
+            //存储数据到模型
+            userInfo.screen_name = infoDict["screen_name"] as? String
+            userInfo.avatar_large = infoDict["avatar_large"] as? String
+            printLog(userInfo)
+        }
+    }
 }

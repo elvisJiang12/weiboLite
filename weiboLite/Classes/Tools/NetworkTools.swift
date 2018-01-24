@@ -24,6 +24,7 @@ class NetworkTools: AFHTTPSessionManager {
         
         //添加JSON序列化的格式
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
+        //tools.responseSerializer.acceptableContentTypes?.insert("application/json")
         
         return tools
     }() //闭包
@@ -58,19 +59,41 @@ extension NetworkTools {
 }
 
 
-//MARK:- 请求AccessToken
+//MARK:- 请求AccessToken https://api.weibo.com/oauth2/access_token
 extension NetworkTools {
     
     func loadAccessToken(code: String, finished: @escaping (_ result: [String : Any]?, _ error: Error?) -> ()) {
-        
+        //1.获取请求的URLString
         let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        //2.获取请求的参数
         let parameters = ["client_id" : app_key,
                           "client_secret" : app_secret,
                           "grant_type" : "authorization_code",
                           "code" : code,
                           "redirect_uri" : redirect_uri]
         
+        //3.发送网络请求
         NetworkTools.shareInstance.request(requestType: .POST, urlString: urlString, parameters: parameters) { (result, error) in
+            finished(result as? [String : Any], error)
+        }
+    }
+}
+
+
+//MARK:- 请求用户信息 https://api.weibo.com/2/users/show.json
+extension NetworkTools {
+    
+    func loadUserInfo(access_token: String, uid: String, finished: @escaping (_ result: [String : Any]?, _ error: Error?) -> ()) {
+        
+        //1.获取请求的URLString
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        //2.请求的参数
+        let parameters = ["access_token" : access_token, "uid" : uid]
+        
+        //3.发送网络请求
+        request(requestType: .GET, urlString: urlString, parameters: parameters) { (result, error) in
             finished(result as? [String : Any], error)
         }
     }
