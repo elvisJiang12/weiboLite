@@ -12,7 +12,7 @@
         <!--Main View Controller-->
         <scene sceneID="4J4-wk-lxG">
             <objects>
-                <tabBarController id="RBn-NU-q1K" customClass="MainViewController" customModule="weiboLite" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="RBn-NU-q1K" customClass="MainViewController" customModule="weiboLite" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AbT-ij-6Az">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

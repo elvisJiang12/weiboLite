@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="weiboLite" customModuleProvider="target">
             <connections>
+                <outlet property="expiresLabel" destination="K1C-yw-nt3" id="F4v-MW-7bC"/>
                 <outlet property="iconView" destination="SVk-4A-1kb" id="xUd-QU-Wbb"/>
                 <outlet property="iconViewBottomCons" destination="iBv-6a-hvI" id="MB0-NC-SVa"/>
+                <outlet property="textLabel" destination="OGL-O9-VtN" id="BAl-Ld-qtg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,13 +46,24 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录过期提醒" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1C-yw-nt3">
+                    <rect key="frame" x="28" y="559" width="320" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="mcP-mw-38T"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0g5-PO-WMG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0cr-US-MAb"/>
+                <constraint firstItem="K1C-yw-nt3" firstAttribute="top" secondItem="OGL-O9-VtN" secondAttribute="bottom" constant="5" id="1Nw-te-aba"/>
                 <constraint firstItem="OGL-O9-VtN" firstAttribute="centerX" secondItem="SVk-4A-1kb" secondAttribute="centerX" id="DL6-Bd-GJg"/>
                 <constraint firstItem="0g5-PO-WMG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NJm-p8-4Jc"/>
                 <constraint firstItem="OGL-O9-VtN" firstAttribute="top" secondItem="SVk-4A-1kb" secondAttribute="bottom" constant="20" id="ZDQ-u0-hVk"/>
+                <constraint firstItem="K1C-yw-nt3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZmX-Ke-Bnp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SVk-4A-1kb" secondAttribute="bottom" constant="150" id="iBv-6a-hvI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0g5-PO-WMG" secondAttribute="bottom" id="nqf-sX-GCF"/>
                 <constraint firstItem="SVk-4A-1kb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="orh-1s-ec9"/>

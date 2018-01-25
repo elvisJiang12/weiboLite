@@ -13,12 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    //设置默认的View
     var defaultViewController: UIViewController? {
         let isLogin = UserAccountTools.shareInstance.isLogin()
-        
+        //如果用户登录,则显示欢迎界面及动画
         if isLogin {
             return WelcomeViewController()
         } else {
+            //如果用户未登录, 则进入storyBoard主界面引导用户授权登录
             return UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()
         }
     }

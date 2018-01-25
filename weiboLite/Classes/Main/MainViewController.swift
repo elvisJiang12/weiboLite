@@ -19,6 +19,7 @@ class MainViewController: UITabBarController {
                            "tabbar_discover",
                            "tabbar_profile"]
 
+    //MARK:- 系统回调的函数
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +51,7 @@ extension MainViewController {
     //设置发布按钮
     private func setupComposeBtn() {
 
-        //设置发布按钮的位置
+        //设置发布按钮"[+]"的位置
         composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
         
         //将composeBtn添加到tabBar中

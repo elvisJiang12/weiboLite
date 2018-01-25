@@ -14,6 +14,8 @@ class WelcomeViewController: UIViewController {
     //拖线约束, 作为对象的属性
     @IBOutlet var iconViewBottomCons: NSLayoutConstraint!
     @IBOutlet var iconView: UIImageView!
+    @IBOutlet var expiresLabel: UILabel!
+    @IBOutlet var textLabel: UILabel!
     
     //MARK:- 系统回调函数
     override func viewDidLoad() {
@@ -31,6 +33,21 @@ class WelcomeViewController: UIViewController {
             }
             
         }
+        
+        //设置欢迎的文字
+        let nickName = UserAccountTools.shareInstance.userInfo?.screen_name ?? ""
+        textLabel.text = "\(nickName), 欢迎回来"
+        
+        //提示登录过期的日期
+        guard let expires_date = UserAccountTools.shareInstance.userInfo?.expires_date else {
+            return
+        }
+        let formator = DateFormatter()
+        formator.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        let a = formator.string(from: expires_date)
+        printLog(a)
+        expiresLabel.text = "授权将在\(a)过期"
+        
         
         //1.改变约束的值
         iconViewBottomCons.constant = UIScreen.main.bounds.height * 0.65
