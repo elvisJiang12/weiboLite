@@ -34,7 +34,7 @@ class NetworkTools: AFHTTPSessionManager {
 
 //MARK:- 封装请求方法
 extension NetworkTools {
-    
+    ///发送http请求(支持的类型:GET/POST)
     func request(requestType: RequestType, urlString: String, parameters: [String: Any], finished: @escaping (_ result: Any?, _ error: Error?) -> ()) {
         
         ///定义成功的回调闭包
@@ -61,7 +61,7 @@ extension NetworkTools {
 
 //MARK:- 请求AccessToken https://api.weibo.com/oauth2/access_token
 extension NetworkTools {
-    
+    ///请求AccessToken
     func loadAccessToken(code: String, finished: @escaping (_ result: [String : Any]?, _ error: Error?) -> ()) {
         //1.获取请求的URLString
         let urlString = "https://api.weibo.com/oauth2/access_token"
@@ -83,7 +83,7 @@ extension NetworkTools {
 
 //MARK:- 请求用户信息 https://api.weibo.com/2/users/show.json
 extension NetworkTools {
-    
+    ///请求用户信息
     func loadUserInfo(access_token: String, uid: String, finished: @escaping (_ result: [String : Any]?, _ error: Error?) -> ()) {
         
         //1.获取请求的URLString
@@ -97,4 +97,28 @@ extension NetworkTools {
             finished(result as? [String : Any], error)
         }
     }
+}
+
+
+//MARK:- 获取当前登录用户及其所关注用户的最新微博 https://api.weibo.com/2/statuses/home_timeline.json
+extension NetworkTools {
+    ///获取当前登录用户及其所关注用户的最新微博
+    func loadStatuses(finished: @escaping (_ result: [[String : Any]]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        
+        //2.请求的参数
+        let parameters = ["access_token" : (UserAccountTools.shareInstance.userInfo?.access_token)!]
+        
+        //3.发送网络请求
+        request(requestType: .GET, urlString: urlString, parameters: parameters) { (result,error) in
+            guard let statusesDict = result as? [String : Any] else {
+                printLog("未获取到用户的微博数据")
+                return
+            }
+            //在返回结果的大字典中,通过key = "statuses", 获取并返回用户的微博数组
+            finished(statusesDict["statuses"] as? [[String : Any]], error)
+        }
+    }
+
 }

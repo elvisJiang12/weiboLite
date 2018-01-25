@@ -30,6 +30,7 @@
 		144AD6E22019EF2B002A5AA0 /* UserAccountTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6E12019EF2B002A5AA0 /* UserAccountTools.swift */; };
 		144AD6E72019FDEB002A5AA0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6E52019FDEB002A5AA0 /* WelcomeViewController.swift */; };
 		144AD6E82019FDEB002A5AA0 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144AD6E62019FDEB002A5AA0 /* WelcomeViewController.xib */; };
+		144AD6EB201A4D9D002A5AA0 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EA201A4D9D002A5AA0 /* Status.swift */; };
 		147CA345200E6E9F00543180 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA343200E6E9F00543180 /* Message.storyboard */; };
 		147CA34A200E6FB500543180 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA348200E6FB500543180 /* Compose.storyboard */; };
 		147CA34C200E6FED00543180 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34B200E6FED00543180 /* Discover.storyboard */; };
@@ -68,6 +69,7 @@
 		144AD6E12019EF2B002A5AA0 /* UserAccountTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountTools.swift; sourceTree = "<group>"; };
 		144AD6E52019FDEB002A5AA0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		144AD6E62019FDEB002A5AA0 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		144AD6EA201A4D9D002A5AA0 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		147CA344200E6E9F00543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Message.storyboard; sourceTree = "<group>"; };
 		147CA349200E6FB500543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
 		147CA34B200E6FED00543180 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		14216028200E6CD400C6B746 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				144AD6E9201A4D61002A5AA0 /* DataModel */,
 				140AF8252010DB69000E9CE4 /* UIPopover */,
 				14216031200E6DCC00C6B746 /* Home.storyboard */,
 				1421602D200E6D1300C6B746 /* HomeViewController.swift */,
@@ -249,6 +252,14 @@
 				144AD6E62019FDEB002A5AA0 /* WelcomeViewController.xib */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		144AD6E9201A4D61002A5AA0 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				144AD6EA201A4D9D002A5AA0 /* Status.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		14DEC929201765B500F4CE5D /* OAuth */ = {
@@ -430,6 +441,7 @@
 				140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */,
 				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
 				144AD6E22019EF2B002A5AA0 /* UserAccountTools.swift in Sources */,
+				144AD6EB201A4D9D002A5AA0 /* Status.swift in Sources */,
 				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,
 				1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */,
 				14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */,
