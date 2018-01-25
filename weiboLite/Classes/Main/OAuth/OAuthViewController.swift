@@ -186,18 +186,23 @@ extension OAuthViewController {
             //存储数据到模型, 取出字典中的昵称和用户头像地址, 进行保存
             userInfo.screen_name = infoDict["screen_name"] as? String
             userInfo.avatar_large = infoDict["avatar_large"] as? String
-            printLog(userInfo)
             
             //对象保存至文件
-            //1.获取沙盒路径
-            let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
-            //2.文件的保存路径
-            let filePath = path + "/userInfo.plist"
-            let filePath2 = path + "/OriginalUserInfo.plist"
-            
-            //3.归档:保存对象
+            let filePath = UserAccountTools.shareInstance.filePath
             NSKeyedArchiver.archiveRootObject(userInfo, toFile: filePath)
-            NSKeyedArchiver.archiveRootObject(infoDict, toFile: filePath2) //服务器返回的所有数据
+            
+            //把userInfo对象的数据设置到单例中
+            printLog(UserAccountTools.shareInstance.userInfo) //单例为空
+            UserAccountTools.shareInstance.userInfo = userInfo
+            printLog(UserAccountTools.shareInstance.userInfo) //设置后才有值
+            
+            
+            //退出授权登录的控制器界面
+            self.dismiss(animated: false, completion: {
+                //创建并显示"欢迎"界面
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
+            
         }
     }
 }

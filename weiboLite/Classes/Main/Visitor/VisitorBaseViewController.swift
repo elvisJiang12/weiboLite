@@ -14,22 +14,10 @@ class VisitorBaseViewController: UITableViewController {
     lazy var visitorView = VisitorView.createVisitorView()
     
     //MARK: - 登录标识(默认未登录)
-    var isLogin : Bool = false
+    var isLogin : Bool = UserAccountTools.shareInstance.isLogin()
     
     //系统回调函数
     override func loadView() {
-        
-        //从沙盒中读取用户的归档信息
-        let filePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! + "/userInfo.plist"
-        //解档:读取用户信息
-        let userInfo = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? UserAccount
-        if let userInfo = userInfo {
-            //对比accessToken过期日期, 和当前的日期
-            if let expiresDate = userInfo.expires_date {
-                //判断当前是否过期, 如果未过期直接登录
-                isLogin = Date().compare(expiresDate) == ComparisonResult.orderedAscending
-            }
-        }
         
         //判断显示哪一个view,如果未登录,回调visitorView访客视图
         isLogin ? super.loadView() : setupVisitorView()

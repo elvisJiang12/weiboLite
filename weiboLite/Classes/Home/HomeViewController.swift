@@ -52,7 +52,7 @@ extension HomeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(imageName: "navigationbar_pop")
         
         //设置中间的titleView
-        titleBtn.setTitle("暂定微博名", for: .normal)
+        titleBtn.setTitle(UserAccountTools.shareInstance.getNickName(), for: .normal)
         navigationItem.titleView = titleBtn
         
         //监听titleButton的点击
