@@ -31,6 +31,9 @@
 		144AD6E72019FDEB002A5AA0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6E52019FDEB002A5AA0 /* WelcomeViewController.swift */; };
 		144AD6E82019FDEB002A5AA0 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144AD6E62019FDEB002A5AA0 /* WelcomeViewController.xib */; };
 		144AD6EB201A4D9D002A5AA0 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EA201A4D9D002A5AA0 /* Status.swift */; };
+		144AD6ED201AD065002A5AA0 /* NSDate-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EC201AD065002A5AA0 /* NSDate-Extention.swift */; };
+		144AD6EF201AD8B3002A5AA0 /* StatusUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */; };
+		144AD6F1201AF08E002A5AA0 /* StatusModelOpt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */; };
 		147CA345200E6E9F00543180 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA343200E6E9F00543180 /* Message.storyboard */; };
 		147CA34A200E6FB500543180 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA348200E6FB500543180 /* Compose.storyboard */; };
 		147CA34C200E6FED00543180 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34B200E6FED00543180 /* Discover.storyboard */; };
@@ -70,6 +73,9 @@
 		144AD6E52019FDEB002A5AA0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		144AD6E62019FDEB002A5AA0 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		144AD6EA201A4D9D002A5AA0 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		144AD6EC201AD065002A5AA0 /* NSDate-Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extention.swift"; sourceTree = "<group>"; };
+		144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusUserInfo.swift; sourceTree = "<group>"; };
+		144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModelOpt.swift; sourceTree = "<group>"; };
 		147CA344200E6E9F00543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Message.storyboard; sourceTree = "<group>"; };
 		147CA349200E6FB500543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
 		147CA34B200E6FED00543180 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 			children = (
 				140E091C200F29CF0035150C /* UIButton-Extension.swift */,
 				140AF8212010B019000E9CE4 /* UIBarButtonItem-Extention.swift */,
+				144AD6EC201AD065002A5AA0 /* NSDate-Extention.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -258,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				144AD6EA201A4D9D002A5AA0 /* Status.swift */,
+				144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */,
+				144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -435,11 +444,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DEC92F20176FAC00F4CE5D /* Common.swift in Sources */,
+				144AD6ED201AD065002A5AA0 /* NSDate-Extention.swift in Sources */,
 				144AD6E72019FDEB002A5AA0 /* WelcomeViewController.swift in Sources */,
 				14DEC9312018664E00F4CE5D /* NetworkTools.swift in Sources */,
 				14DEC9332018770E00F4CE5D /* UserAccount.swift in Sources */,
 				140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */,
 				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
+				144AD6EF201AD8B3002A5AA0 /* StatusUserInfo.swift in Sources */,
 				144AD6E22019EF2B002A5AA0 /* UserAccountTools.swift in Sources */,
 				144AD6EB201A4D9D002A5AA0 /* Status.swift in Sources */,
 				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,
@@ -455,6 +466,7 @@
 				1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */,
 				14216018200E446100C6B746 /* MainViewController.swift in Sources */,
 				140AF8222010B019000E9CE4 /* UIBarButtonItem-Extention.swift in Sources */,
+				144AD6F1201AF08E002A5AA0 /* StatusModelOpt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

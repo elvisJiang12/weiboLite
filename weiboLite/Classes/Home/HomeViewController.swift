@@ -12,7 +12,7 @@ class HomeViewController: VisitorBaseViewController {
     
     //MARK:- 设置懒加载数据
     private lazy var titleBtn = TitleButton()
-    private lazy var statuses = [Status]()
+    private lazy var statuses = [StatusModelOpt]()
     
     //注意: 在闭包中如果使用当前对象的属性或调用方法, 也需要加self
     //总结: 两个地方不能省略self: 1>如果一个函数中变量名出线歧义(相同名);2>在闭包中使用当前对象的属性和方法
@@ -106,9 +106,12 @@ extension HomeViewController {
                 return
             }
             
-            //3.遍历数组, 转成status模型保存
+            //3.遍历数组, 转成模型保存
             for status in statusesArray {
-                self.statuses.append(Status(dict: status))
+                //先保存为Status模型
+                let tempStatus = Status.init(dict: status)
+                //再转为StatusModelOpt模型保存
+                self.statuses.append(StatusModelOpt(status: tempStatus))
             }
             
             //4.刷新主页的tableView数据
@@ -136,7 +139,7 @@ extension HomeViewController {
         }
         
         //设置cell的数据
-        cell?.textLabel?.text = statuses[indexPath.row].text
+        cell?.textLabel?.text = statuses[indexPath.row].statusOpt?.text
         cell?.detailTextLabel?.text = statuses[indexPath.row].souceForDisplay
         
         return cell!
