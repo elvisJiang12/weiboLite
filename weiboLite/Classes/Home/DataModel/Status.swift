@@ -17,7 +17,7 @@ class Status: NSObject {
     var mid : Int64 = 0                 //微博MID
     var text : String?                  //微博信息内容
     var source : String?                //微博来源
-    var user : StatusUserInfo?          //微博作者的用户信息
+    var userInfo : StatusUserInfo?          //微博作者的用户信息
     
     //MARK:- 自定义构造函数
     init(dict: [String : Any]) {
@@ -26,7 +26,7 @@ class Status: NSObject {
         
         //微博作者的用户信息字典转模型
         if let userdict = dict["user"] as? [String : Any] {
-            user = StatusUserInfo.init(dict: userdict)
+            userInfo = StatusUserInfo.init(dict: userdict)
         }
         
     }

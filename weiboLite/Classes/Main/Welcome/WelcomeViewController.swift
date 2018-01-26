@@ -33,6 +33,9 @@ class WelcomeViewController: UIViewController {
             }
             
         }
+        //设置图片的半径
+        iconView.layer.cornerRadius = iconView.bounds.width * 0.5
+        iconView.layer.masksToBounds = true
         
         //设置欢迎的文字
         let nickName = UserAccountTools.shareInstance.userInfo?.screen_name ?? ""

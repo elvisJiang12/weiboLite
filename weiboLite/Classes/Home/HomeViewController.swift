@@ -115,7 +115,7 @@ extension HomeViewController {
             }
             
             //4.刷新主页的tableView数据
-            
+            self.tableView.rowHeight = 300
             self.tableView.reloadData()
         }
     }
@@ -133,16 +133,15 @@ extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //创建cell, 并附带标识循环利用
-        var cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell")
-        if cell == nil {
-            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "HomeCell")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeTableViewCell
+//        if cell == nil {
+//            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "HomeCell") as! HomeTableViewCell
+//        }
         
         //设置cell的数据
-        cell?.textLabel?.text = statuses[indexPath.row].statusOpt?.text
-        cell?.detailTextLabel?.text = statuses[indexPath.row].souceForDisplay
+        cell.status = statuses[indexPath.row]
         
-        return cell!
+        return cell
         
     }
     

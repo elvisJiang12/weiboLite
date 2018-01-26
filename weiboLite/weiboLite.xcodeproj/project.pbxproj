@@ -34,6 +34,7 @@
 		144AD6ED201AD065002A5AA0 /* NSDate-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EC201AD065002A5AA0 /* NSDate-Extention.swift */; };
 		144AD6EF201AD8B3002A5AA0 /* StatusUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */; };
 		144AD6F1201AF08E002A5AA0 /* StatusModelOpt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */; };
+		144AD6F3201B0624002A5AA0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */; };
 		147CA345200E6E9F00543180 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA343200E6E9F00543180 /* Message.storyboard */; };
 		147CA34A200E6FB500543180 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA348200E6FB500543180 /* Compose.storyboard */; };
 		147CA34C200E6FED00543180 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34B200E6FED00543180 /* Discover.storyboard */; };
@@ -76,6 +77,7 @@
 		144AD6EC201AD065002A5AA0 /* NSDate-Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extention.swift"; sourceTree = "<group>"; };
 		144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusUserInfo.swift; sourceTree = "<group>"; };
 		144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModelOpt.swift; sourceTree = "<group>"; };
+		144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		147CA344200E6E9F00543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Message.storyboard; sourceTree = "<group>"; };
 		147CA349200E6FB500543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
 		147CA34B200E6FED00543180 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				144AD6E9201A4D61002A5AA0 /* DataModel */,
 				140AF8252010DB69000E9CE4 /* UIPopover */,
 				14216031200E6DCC00C6B746 /* Home.storyboard */,
+				144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */,
 				1421602D200E6D1300C6B746 /* HomeViewController.swift */,
 			);
 			name = Home;
@@ -454,6 +457,7 @@
 				144AD6E22019EF2B002A5AA0 /* UserAccountTools.swift in Sources */,
 				144AD6EB201A4D9D002A5AA0 /* Status.swift in Sources */,
 				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,
+				144AD6F3201B0624002A5AA0 /* HomeTableViewCell.swift in Sources */,
 				1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */,
 				14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */,
 				14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */,
