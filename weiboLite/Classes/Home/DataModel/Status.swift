@@ -13,11 +13,12 @@ import UIKit
 class Status: NSObject {
     
     //MARK:- 定义属性
-    var created_at : String?            //微博创建时间
-    var mid : Int64 = 0                 //微博MID
-    var text : String?                  //微博信息内容
-    var source : String?                //微博来源
+    var created_at : String?                //微博创建时间
+    var mid : Int64 = 0                     //微博MID
+    var text : String?                      //微博信息内容
+    var source : String?                    //微博来源
     var userInfo : StatusUserInfo?          //微博作者的用户信息
+    var pic_urls : [[String : String]]?     //微博的图片地址
     
     //MARK:- 自定义构造函数
     init(dict: [String : Any]) {

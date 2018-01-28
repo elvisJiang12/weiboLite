@@ -24,7 +24,7 @@ class NetworkTools: AFHTTPSessionManager {
         
         //添加JSON序列化的格式
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
-        //tools.responseSerializer.acceptableContentTypes?.insert("application/json")
+        tools.responseSerializer.acceptableContentTypes?.insert("application/json")
         
         return tools
     }() //闭包

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class HomeViewController: VisitorBaseViewController {
     
@@ -40,6 +42,10 @@ class HomeViewController: VisitorBaseViewController {
         
         //请求微博数据
         loadStatuses()
+        
+        //设置tableVeiw的高度
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 300
     }
 
 
@@ -111,14 +117,49 @@ extension HomeViewController {
                 //先保存为Status模型
                 let tempStatus = Status.init(dict: status)
                 //再转为StatusModelOpt模型保存
-                self.statuses.append(StatusModelOpt(status: tempStatus))
+                self.statuses.append(StatusModelOpt(statusOpt: tempStatus))
             }
             
-            //4.刷新主页的tableView数据
-            self.tableView.rowHeight = 300
-            self.tableView.reloadData()
+            //4.缓存微博的图片(异步保存)
+            self.cacheImages(statuses: self.statuses)
+            
+            
+            //5.刷新主页的tableView数据
+            
+            
         }
     }
+    
+    //异步操作下载微博的图片, 然后才
+    private func cacheImages(statuses : [StatusModelOpt]) {
+        
+        //0.创建异步操作的group
+        let group = DispatchGroup.init()
+        SDWebImageManager.shared().imageCache?.clearDisk(onCompletion: {
+            printLog("先清除缓存")
+        })
+        
+        //1.缓存图片
+        for status in statuses {
+            for picURL in status.picURLs {
+                group.enter()  //进入group
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _) in
+                    printLog(picURL)
+                    group.leave()   //离开group
+                })
+            }
+            
+        
+        }
+        
+        //2.刷新tableView数据
+        group.notify(queue: DispatchQueue.main) {
+            printLog("加载tableView数据")
+            self.tableView.reloadData()
+        }
+        
+    }
+    
 }
 
 //MARK: - TableView的代理方法

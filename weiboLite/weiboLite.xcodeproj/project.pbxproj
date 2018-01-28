@@ -17,6 +17,7 @@
 		140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */; };
 		140E0924200F54550035150C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E0923200F54550035150C /* VisitorView.swift */; };
 		140E0926200F54950035150C /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140E0925200F54950035150C /* VisitorView.xib */; };
+		141132BB201CDFA7005A579C /* PicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141132BA201CDFA7005A579C /* PicView.swift */; };
 		14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14215F8A200DCBF000C6B746 /* AppDelegate.swift */; };
 		14215F90200DCBF000C6B746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14215F8E200DCBF000C6B746 /* Main.storyboard */; };
 		14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14215F91200DCBF000C6B746 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorBaseViewController.swift; sourceTree = "<group>"; };
 		140E0923200F54550035150C /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		140E0925200F54950035150C /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		141132BA201CDFA7005A579C /* PicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicView.swift; sourceTree = "<group>"; };
 		14215F87200DCBF000C6B746 /* weiboLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14215F8A200DCBF000C6B746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14215F8F200DCBF000C6B746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				14216031200E6DCC00C6B746 /* Home.storyboard */,
 				144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */,
 				1421602D200E6D1300C6B746 /* HomeViewController.swift */,
+				141132BA201CDFA7005A579C /* PicView.swift */,
 			);
 			name = Home;
 			path = Classes/Home;
@@ -465,6 +468,7 @@
 				140AF8242010B5EF000E9CE4 /* TitleButton.swift in Sources */,
 				140AF82D2014F053000E9CE4 /* JWWPopoverAnimator.swift in Sources */,
 				140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */,
+				141132BB201CDFA7005A579C /* PicView.swift in Sources */,
 				14216030200E6D1E00C6B746 /* DiscoverViewController.swift in Sources */,
 				140E0924200F54550035150C /* VisitorView.swift in Sources */,
 				1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */,
