@@ -58,7 +58,9 @@ class StatusModelOpt: NSObject {
         
         //处理会员等级对应的Image
         let mbrank = statusOpt.userInfo?.mbrank ?? 0
-        if mbrank > 0 && mbrank <= 6 {
+        if mbrank == 0 {
+            vip_Image = UIImage(named: "")
+        } else if mbrank > 0 && mbrank <= 6 {
             vip_Image = UIImage(named: "common_icon_membership_level\(mbrank)")
         } else {
             //!!!!!缺少等级7的图片资源

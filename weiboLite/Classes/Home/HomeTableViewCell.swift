@@ -116,15 +116,18 @@ extension HomeTableViewCell {
         //图片数量=1
         if picNum == 1 {
             //从本地磁盘中取出图片
-            let urlString = status?.picURLs.first?.absoluteString
-            let cacheImage = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlString)
-                //SDWebImageManager.shared().imageCache?.imageFromCache(forKey: urlString)
-            //设置单张图片的size
-            guard let image = cacheImage else {
-                printLog("未找到缓存的图片: \(urlString!)")
-                return CGSize.zero
-            }
-            layer.itemSize = CGSize.init(width: image.size.width * 3, height: 200)
+//            let urlString = status?.picURLs.last?.absoluteString
+//            let cacheImage = //SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlString)
+//                SDWebImageManager.shared().imageCache?.imageFromCache(forKey: urlString)
+//            //设置单张图片的size
+//            guard let image = cacheImage else {
+//                printLog("未找到缓存的图片: \(urlString!)")
+//                return CGSize.zero
+//            }
+            
+            let width = UIScreen.main.bounds.width - edgeMargin * 2
+            
+            layer.itemSize = CGSize.init(width: width, height: width)
             //返回整个picView的size = 图片的size
             return layer.itemSize
         }
