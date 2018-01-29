@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -123,12 +124,12 @@
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tpi-vP-ifd" userLabel="配图View" customClass="PicView" customModule="weiboLite" customModuleProvider="target">
                                             <rect key="frame" x="15" y="182" width="240" height="120"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="1" green="0.71819984520000002" blue="0.1097585777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="EbH-7V-neh"/>
                                                 <constraint firstAttribute="height" constant="120" id="Shu-TF-Lhy"/>
                                             </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BYS-5n-Tvx">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="y9W-Et-VNS">
                                                 <size key="itemSize" width="50" height="50"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -148,9 +149,9 @@
                                                         </subviews>
                                                     </view>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="jPg-UI-vIk" secondAttribute="trailing" id="0Th-4C-8w5"/>
-                                                        <constraint firstItem="jPg-UI-vIk" firstAttribute="top" secondItem="W9g-Vk-tAE" secondAttribute="top" id="IlJ-q7-gjH"/>
-                                                        <constraint firstAttribute="bottom" secondItem="jPg-UI-vIk" secondAttribute="bottom" id="hft-wM-q9I"/>
+                                                        <constraint firstItem="jPg-UI-vIk" firstAttribute="top" secondItem="W9g-Vk-tAE" secondAttribute="top" id="2Y3-GM-k9E"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="jPg-UI-vIk" secondAttribute="bottom" constant="-8" id="Wrw-g0-ZWz"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="jPg-UI-vIk" secondAttribute="trailing" constant="-8" id="fkS-Jx-iC8"/>
                                                         <constraint firstItem="jPg-UI-vIk" firstAttribute="leading" secondItem="W9g-Vk-tAE" secondAttribute="leading" id="wMp-WM-HjF"/>
                                                     </constraints>
                                                     <connections>

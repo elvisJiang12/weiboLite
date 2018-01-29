@@ -133,9 +133,14 @@ extension HomeTableViewCell {
         
         //微博有配图时,恢复微博正文和图片之间的距离
         retweetedToPicView.constant = 15
+        
         //拿到collectionView的布局, 转为流水布局
         let layer = picView.collectionViewLayout as! UICollectionViewFlowLayout
-        
+        //图片数量>1时, 单个图片的size:
+        layer.itemSize = CGSize.init(width: picCellWH, height: picCellWH)
+        //设置图片之间的间隔最小值, 或者在storyBoard中设置
+        layer.minimumLineSpacing = cellMargin
+        layer.minimumInteritemSpacing = cellMargin
         
         //图片数量=1
         if picNum == 1 {
@@ -146,30 +151,30 @@ extension HomeTableViewCell {
             //设置单张图片的size
             guard let image = cacheImage else {
                 printLog("未找到缓存的图片: \(urlString!)")
-                layer.itemSize = CGSize.init(width: 300, height: 300)
-                return CGSize.init(width: 300, height: 300)
+                layer.itemSize = CGSize.init(width: 250, height: 250)
+                return CGSize.init(width: 250, height: 250)
             }
             
-            layer.itemSize = CGSize.init(width: image.size.width * 0.4, height: image.size.height * 0.4)
+            if image.size.height * 0.4 > 250 {
+                layer.itemSize = CGSize.init(width: image.size.width * 0.4, height: 250)
+            } else {
+                layer.itemSize = CGSize.init(width: image.size.width * 0.4, height: image.size.height * 0.4)
+            }
             //返回整个picView的size = 图片的size
             return layer.itemSize
         }
         
-        //图片数量>1时, 单个图片的size:
-        layer.itemSize = CGSize.init(width: picCellWH, height: picCellWH)
-        //设置图片之间的间隔最小值, 或者在storyBoard中设置
-        layer.minimumLineSpacing = cellMargin
-        layer.minimumInteritemSpacing = cellMargin
         
         //图片数量=4
         if picNum == 4 {
-            let picViewWH = picCellWH * 2 + cellMargin
+            let picViewWH = picCellWH * 2 + cellMargin + 1
+            
             return CGSize.init(width: picViewWH, height: picViewWH)
         }
         
         //图片数量=其他
         let row = CGFloat((picNum - 1) / 3 + 1)
-        let picViewW = UIScreen.main.bounds.width - edgeMargin * 2
+        let picViewW = UIScreen.main.bounds.width - edgeMargin * 2 + 1
         let picViewH = row * picCellWH + (row - 1) * cellMargin
         return CGSize.init(width: picViewW, height: picViewH)
     }

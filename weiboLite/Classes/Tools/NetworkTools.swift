@@ -103,12 +103,13 @@ extension NetworkTools {
 //MARK:- 获取当前登录用户及其所关注用户的最新微博 https://api.weibo.com/2/statuses/home_timeline.json
 extension NetworkTools {
     ///获取当前登录用户及其所关注用户的最新微博
-    func loadStatuses(finished: @escaping (_ result: [[String : Any]]?, _ error: Error?) -> ()) {
+    func loadStatuses(since_id: Int64, max_id: Int64, finished: @escaping (_ result: [[String : Any]]?, _ error: Error?) -> ()) {
         //1.获取请求的URLString
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
         //2.请求的参数
-        let parameters = ["access_token" : (UserAccountTools.shareInstance.userInfo?.access_token)!]
+        let parameters: [String : Any] = ["access_token" : (UserAccountTools.shareInstance.userInfo?.access_token)!,
+                                          "since_id" : since_id, "max_id" : max_id]
         
         //3.发送网络请求
         request(requestType: .GET, urlString: urlString, parameters: parameters) { (result,error) in

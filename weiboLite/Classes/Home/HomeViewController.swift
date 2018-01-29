@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 
 class HomeViewController: VisitorBaseViewController {
@@ -41,13 +42,16 @@ class HomeViewController: VisitorBaseViewController {
         setupNavigationBar()
         
         //请求微博数据
-        loadStatuses()
+        //loadStatuses()
         
         //设置tableView估算高度
         self.tableView.estimatedRowHeight = 300
         //根据控件之间的约束, 自动计算tableVeiw的高度
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        //设置下拉刷新
+        setupRefreshHeaderView()
+        setupFooterView()
     }
 
 
@@ -69,6 +73,30 @@ extension HomeViewController {
         
         //监听titleButton的点击
         titleBtn.addTarget(self, action: #selector(titleBtnClick), for: .touchUpInside)
+    }
+    
+    //设置下拉刷新的headerView
+    private func setupRefreshHeaderView() {
+        //创建headerView
+        let header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadNewStatuses))
+        //设置header属性
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("释放更新", for: .pulling)
+        header?.setTitle("加载中...", for: .refreshing)
+        
+        //设置tableView的header
+        tableView.mj_header = header
+        
+        //进入刷新状态
+        tableView.mj_header.beginRefreshing()
+    }
+    
+    //设置上拉加载View
+    private func setupFooterView() {
+        let footer = MJRefreshAutoFooter.init(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatuses))
+        
+        tableView.mj_footer = footer
+        //tableView.mj_footer.beginRefreshing()
     }
     
 }
@@ -98,9 +126,30 @@ extension HomeViewController {
 
 //MARK: - 请求网络数据
 extension HomeViewController {
+    
+    ///获取当前用户最新的微博数据
+    @objc private func loadNewStatuses() {
+        loadStatuses(isUpdate: true)
+    }
+    
+    ///上拉获取当前用户更多的微博数据
+    @objc private func loadMoreStatuses() {
+        loadStatuses(isUpdate: false)
+    }
+    
+    
     ///获取当前登录用户及其所关注用户的最新微博
-    private func loadStatuses() {
-        NetworkTools.shareInstance.loadStatuses { (result, error) in
+    private func loadStatuses(isUpdate : Bool) {
+        var sinceId : Int64 = 0
+        var maxID : Int64 = 0
+        //下拉刷新时, isUpdate = true
+        if isUpdate {
+            sinceId = (statuses.first?.statusOpt?.mid) ?? 0
+        } else {//上拉加载更多时, isUpdate = false
+            maxID = statuses.last?.statusOpt?.mid ?? 0
+            maxID = maxID == 0 ? 0 : (maxID - 1)
+        }
+        NetworkTools.shareInstance.loadStatuses(since_id: sinceId, max_id: maxID) { (result, error) in
             
             //1.错误校验
             if error != nil {
@@ -115,16 +164,25 @@ extension HomeViewController {
             }
             
             //3.遍历数组, 转成模型保存
+            var newStatuses : [StatusModelOpt] = [StatusModelOpt]()
             for status in statusesArray {
                 //先保存为Status模型
                 let tempStatus = Status.init(dict: status)
                 //再转为StatusModelOpt模型保存
-                self.statuses.append(StatusModelOpt(statusOpt: tempStatus))
+                newStatuses.append(StatusModelOpt(statusOpt: tempStatus))
+            }
+            
+            if isUpdate {
+                //新刷新的微博数据, 插入到原模型数据的前面
+                self.statuses = newStatuses + self.statuses
+            } else {
+                //底部上拉加载的微博数据, 插入到原模型数据的最后
+                self.statuses = self.statuses + newStatuses
             }
             
             
             //4.缓存微博的图片(异步保存)
-            self.cacheImages(statuses: self.statuses)
+            self.cacheImages(statuses: newStatuses) //只需要缓存新刷新的数据即可
             
             
             //5.刷新主页的tableView数据
@@ -138,9 +196,6 @@ extension HomeViewController {
         
         //0.创建异步操作的group
         let group = DispatchGroup.init()
-        SDWebImageManager.shared().imageCache?.clearDisk(onCompletion: {
-            printLog("先清除缓存")
-        })
         
         //1.缓存图片
         for status in statuses {
@@ -159,6 +214,9 @@ extension HomeViewController {
         group.notify(queue: DispatchQueue.main) {
             printLog("加载tableView数据")
             self.tableView.reloadData()
+            
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
         
     }
