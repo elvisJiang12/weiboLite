@@ -43,9 +43,11 @@ class HomeViewController: VisitorBaseViewController {
         //请求微博数据
         loadStatuses()
         
-        //设置tableVeiw的高度
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        //设置tableView估算高度
         self.tableView.estimatedRowHeight = 300
+        //根据控件之间的约束, 自动计算tableVeiw的高度
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
 
@@ -119,6 +121,7 @@ extension HomeViewController {
                 //再转为StatusModelOpt模型保存
                 self.statuses.append(StatusModelOpt(statusOpt: tempStatus))
             }
+            
             
             //4.缓存微博的图片(异步保存)
             self.cacheImages(statuses: self.statuses)

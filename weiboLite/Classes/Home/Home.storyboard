@@ -40,33 +40,33 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud7-n7-J7f">
-                                            <rect key="frame" x="70" y="15" width="61.5" height="18"/>
+                                            <rect key="frame" x="70" y="15" width="62" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership_level1" translatesAutoresizingMaskIntoConstraints="NO" id="OwE-DL-NXS" userLabel="会员等级">
-                                            <rect key="frame" x="136.5" y="16.5" width="14" height="14"/>
+                                            <rect key="frame" x="137" y="17" width="14" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="14" id="egm-w9-4Kn"/>
                                                 <constraint firstAttribute="height" constant="14" id="lf8-1k-1IC"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBf-qf-yBr">
-                                            <rect key="frame" x="70" y="40.5" width="49.5" height="14.5"/>
+                                            <rect key="frame" x="70" y="40" width="50" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布的来源" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aj7-qV-1de">
-                                            <rect key="frame" x="124.5" y="40.5" width="61.5" height="14.5"/>
+                                            <rect key="frame" x="125" y="40" width="62" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博正文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8V8-bb-Rr7">
-                                            <rect key="frame" x="15" y="70" width="345" height="97"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="15" y="70" width="345" height="61"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -117,6 +117,10 @@
                                                 <constraint firstItem="AGW-vi-f1m" firstAttribute="width" secondItem="RTN-dF-1sL" secondAttribute="width" id="ryg-KS-f6l"/>
                                             </constraints>
                                         </view>
+                                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJG-b5-nCp" userLabel="转发的背景">
+                                            <rect key="frame" x="0.0" y="141" width="375" height="176"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tpi-vP-ifd" userLabel="配图View" customClass="PicView" customModule="weiboLite" customModuleProvider="target">
                                             <rect key="frame" x="15" y="182" width="240" height="120"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,17 +159,26 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="转发的微博正文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vd-Pk-8UQ" userLabel="转发的微博正文">
+                                            <rect key="frame" x="15" y="147" width="345" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tpi-vP-ifd" firstAttribute="top" secondItem="8V8-bb-Rr7" secondAttribute="bottom" constant="15" id="4sq-xO-Gg5"/>
                                         <constraint firstItem="ud7-n7-J7f" firstAttribute="top" secondItem="e5o-s6-C0T" secondAttribute="top" id="IIP-iW-HeV"/>
+                                        <constraint firstItem="asW-Dy-sD9" firstAttribute="top" secondItem="MJG-b5-nCp" secondAttribute="bottom" id="JFq-3R-e0D"/>
                                         <constraint firstItem="OwE-DL-NXS" firstAttribute="leading" secondItem="ud7-n7-J7f" secondAttribute="trailing" constant="5" id="K9B-3M-5Ba"/>
                                         <constraint firstItem="e5o-s6-C0T" firstAttribute="top" secondItem="YHD-YE-a3V" secondAttribute="top" constant="15" id="LLO-sw-0IJ"/>
+                                        <constraint firstItem="0Vd-Pk-8UQ" firstAttribute="leading" secondItem="e5o-s6-C0T" secondAttribute="leading" id="QD5-HA-rHL"/>
                                         <constraint firstItem="adQ-2y-daQ" firstAttribute="bottom" secondItem="e5o-s6-C0T" secondAttribute="bottom" id="R39-jU-AQy"/>
                                         <constraint firstItem="adQ-2y-daQ" firstAttribute="trailing" secondItem="e5o-s6-C0T" secondAttribute="trailing" id="RPN-oY-WGe"/>
                                         <constraint firstItem="tpi-vP-ifd" firstAttribute="leading" secondItem="e5o-s6-C0T" secondAttribute="leading" id="RR5-2T-3zV"/>
                                         <constraint firstItem="8V8-bb-Rr7" firstAttribute="top" secondItem="e5o-s6-C0T" secondAttribute="bottom" constant="15" id="Upm-Y1-TtR"/>
                                         <constraint firstItem="ud7-n7-J7f" firstAttribute="leading" secondItem="e5o-s6-C0T" secondAttribute="trailing" constant="15" id="Wh3-k4-AkD"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Vd-Pk-8UQ" secondAttribute="trailing" constant="15" id="Xw7-HH-m5v"/>
+                                        <constraint firstItem="tpi-vP-ifd" firstAttribute="top" secondItem="0Vd-Pk-8UQ" secondAttribute="bottom" constant="15" id="Y8H-Pw-sqF"/>
                                         <constraint firstItem="asW-Dy-sD9" firstAttribute="top" secondItem="tpi-vP-ifd" secondAttribute="bottom" priority="750" constant="15" id="Zi2-U5-gDz"/>
                                         <constraint firstItem="8V8-bb-Rr7" firstAttribute="leading" secondItem="e5o-s6-C0T" secondAttribute="leading" id="ayZ-V3-VLC"/>
                                         <constraint firstItem="FBf-qf-yBr" firstAttribute="bottom" secondItem="e5o-s6-C0T" secondAttribute="bottom" id="dxi-pE-Mwn"/>
@@ -174,21 +187,34 @@
                                         <constraint firstItem="OwE-DL-NXS" firstAttribute="centerY" secondItem="ud7-n7-J7f" secondAttribute="centerY" id="gcq-kQ-5QD"/>
                                         <constraint firstItem="Aj7-qV-1de" firstAttribute="bottom" secondItem="FBf-qf-yBr" secondAttribute="bottom" id="i7p-SR-4UB"/>
                                         <constraint firstAttribute="trailing" secondItem="8V8-bb-Rr7" secondAttribute="trailing" constant="15" id="k2E-Pa-qGf"/>
+                                        <constraint firstItem="MJG-b5-nCp" firstAttribute="leading" secondItem="YHD-YE-a3V" secondAttribute="leading" id="k6z-Z6-aAb"/>
                                         <constraint firstItem="e5o-s6-C0T" firstAttribute="leading" secondItem="YHD-YE-a3V" secondAttribute="leading" constant="15" id="mLr-hQ-yEm"/>
                                         <constraint firstItem="OwE-DL-NXS" firstAttribute="centerY" secondItem="ud7-n7-J7f" secondAttribute="centerY" id="omJ-VC-WQT"/>
+                                        <constraint firstAttribute="trailing" secondItem="MJG-b5-nCp" secondAttribute="trailing" id="sh5-JE-kdL"/>
+                                        <constraint firstItem="MJG-b5-nCp" firstAttribute="top" secondItem="8V8-bb-Rr7" secondAttribute="bottom" constant="10" id="shG-IP-9eB"/>
+                                        <constraint firstItem="0Vd-Pk-8UQ" firstAttribute="top" secondItem="8V8-bb-Rr7" secondAttribute="bottom" constant="16" id="tJu-oW-2uU"/>
                                         <constraint firstAttribute="bottom" secondItem="asW-Dy-sD9" secondAttribute="bottom" id="vuN-w6-Bxw"/>
                                         <constraint firstItem="Aj7-qV-1de" firstAttribute="leading" secondItem="FBf-qf-yBr" secondAttribute="trailing" constant="5" id="wJo-yu-MoN"/>
                                         <constraint firstAttribute="trailing" secondItem="asW-Dy-sD9" secondAttribute="trailing" id="xOy-Hg-5zN"/>
+                                        <constraint firstItem="tpi-vP-ifd" firstAttribute="top" secondItem="8V8-bb-Rr7" secondAttribute="bottom" constant="15" id="z0i-TF-Qm5"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="z0i-TF-Qm5"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contentLabel" destination="8V8-bb-Rr7" id="ZXg-hg-FTS"/>
-                                    <outlet property="contentToPicView" destination="4sq-xO-Gg5" id="U55-Sc-AMK"/>
+                                    <outlet property="contentToRetweeted" destination="tJu-oW-2uU" id="JVq-WP-ftA"/>
                                     <outlet property="iconView" destination="e5o-s6-C0T" id="v4j-fX-Jmg"/>
                                     <outlet property="nickNameLabel" destination="ud7-n7-J7f" id="Q46-al-nJH"/>
                                     <outlet property="picView" destination="tpi-vP-ifd" id="sFA-EO-hbd"/>
                                     <outlet property="picViewHeight" destination="Shu-TF-Lhy" id="oJU-93-htP"/>
                                     <outlet property="picViewWidth" destination="EbH-7V-neh" id="eba-cO-pZf"/>
+                                    <outlet property="retweetedBgView" destination="MJG-b5-nCp" id="lYc-J9-iTM"/>
+                                    <outlet property="retweetedLabel" destination="0Vd-Pk-8UQ" id="UhK-vk-cxB"/>
+                                    <outlet property="retweetedToPicView" destination="Y8H-Pw-sqF" id="87s-re-5rG"/>
                                     <outlet property="sourceLabel" destination="Aj7-qV-1de" id="ANK-ap-cAD"/>
                                     <outlet property="timeLabel" destination="FBf-qf-yBr" id="V5Q-rW-nr9"/>
                                     <outlet property="verifiedView" destination="adQ-2y-daQ" id="jk1-4t-ka9"/>

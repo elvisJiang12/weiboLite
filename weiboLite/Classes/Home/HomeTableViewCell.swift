@@ -27,10 +27,17 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var contentLabel: UILabel!
+    @IBOutlet var picView: PicView!
+    @IBOutlet var retweetedLabel: UILabel!
+    @IBOutlet var retweetedBgView: UIView!
+    
+    //MARK:- 控件的约束属性
+    @IBOutlet var retweetedToPicView: NSLayoutConstraint!
+    @IBOutlet var contentToRetweeted: NSLayoutConstraint!
     @IBOutlet var picViewWidth: NSLayoutConstraint!
     @IBOutlet var picViewHeight: NSLayoutConstraint!
-    @IBOutlet var contentToPicView: NSLayoutConstraint!
-    @IBOutlet var picView: PicView!
+    
+    
     
     //MARK:- 自定义计算属性
     var status : StatusModelOpt? {
@@ -79,6 +86,23 @@ class HomeTableViewCell: UITableViewCell {
             
             //9.设置微博的配图
             picView.picURLs = status.picURLs
+            
+            //10.设置转发的微博正文
+            if status.statusOpt?.retweeted_status != nil {
+                if let name = status.statusOpt?.retweeted_status?.userInfo?.screen_name,
+                    let retweetedText = status.statusOpt?.retweeted_status?.text {
+                    retweetedLabel.text = "@" + name + ":" + retweetedText
+                }
+                retweetedBgView.isHidden = false
+                contentToRetweeted.constant = 16
+            } else {
+                //避免cell循环利用时出错
+                retweetedLabel.text = ""
+                retweetedBgView.isHidden = true
+                contentToRetweeted.constant = 0
+            }
+            
+            
         }
     }
     
@@ -103,12 +127,12 @@ extension HomeTableViewCell {
         //图片数量为0
         if picNum == 0 {
             //修改微博正文和图片之间的距离=0
-            contentToPicView.constant = 0
+            retweetedToPicView.constant = 0
             return CGSize.zero
         }
         
         //微博有配图时,恢复微博正文和图片之间的距离
-        contentToPicView.constant = 15
+        retweetedToPicView.constant = 15
         //拿到collectionView的布局, 转为流水布局
         let layer = picView.collectionViewLayout as! UICollectionViewFlowLayout
         
@@ -116,18 +140,17 @@ extension HomeTableViewCell {
         //图片数量=1
         if picNum == 1 {
             //从本地磁盘中取出图片
-//            let urlString = status?.picURLs.last?.absoluteString
-//            let cacheImage = //SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlString)
-//                SDWebImageManager.shared().imageCache?.imageFromCache(forKey: urlString)
-//            //设置单张图片的size
-//            guard let image = cacheImage else {
-//                printLog("未找到缓存的图片: \(urlString!)")
-//                return CGSize.zero
-//            }
+            let urlString = status?.picURLs.last?.absoluteString
+            let cacheImage = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlString)
+                SDWebImageManager.shared().imageCache?.imageFromCache(forKey: urlString)
+            //设置单张图片的size
+            guard let image = cacheImage else {
+                printLog("未找到缓存的图片: \(urlString!)")
+                layer.itemSize = CGSize.init(width: 300, height: 300)
+                return CGSize.init(width: 300, height: 300)
+            }
             
-            let width = UIScreen.main.bounds.width - edgeMargin * 2
-            
-            layer.itemSize = CGSize.init(width: width, height: width)
+            layer.itemSize = CGSize.init(width: image.size.width * 0.4, height: image.size.height * 0.4)
             //返回整个picView的size = 图片的size
             return layer.itemSize
         }
