@@ -124,7 +124,7 @@
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tpi-vP-ifd" userLabel="配图View" customClass="PicView" customModule="weiboLite" customModuleProvider="target">
                                             <rect key="frame" x="15" y="182" width="240" height="120"/>
-                                            <color key="backgroundColor" red="1" green="0.71819984520000002" blue="0.1097585777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="EbH-7V-neh"/>
                                                 <constraint firstAttribute="height" constant="120" id="Shu-TF-Lhy"/>

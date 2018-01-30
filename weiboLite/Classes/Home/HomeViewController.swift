@@ -16,6 +16,7 @@ class HomeViewController: VisitorBaseViewController {
     //MARK:- 设置懒加载数据
     private lazy var titleBtn = TitleButton()
     private lazy var statuses = [StatusModelOpt]()
+    private lazy var tipLabel = UILabel()
     
     //注意: 在闭包中如果使用当前对象的属性或调用方法, 也需要加self
     //总结: 两个地方不能省略self: 1>如果一个函数中变量名出线歧义(相同名);2>在闭包中使用当前对象的属性和方法
@@ -52,6 +53,9 @@ class HomeViewController: VisitorBaseViewController {
         //设置下拉刷新
         setupRefreshHeaderView()
         setupFooterView()
+        
+        //设置刷新提示的label
+        setupTipLabel()
     }
 
 
@@ -95,10 +99,45 @@ extension HomeViewController {
     private func setupFooterView() {
         let footer = MJRefreshAutoFooter.init(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatuses))
         
+        
         tableView.mj_footer = footer
-        //tableView.mj_footer.beginRefreshing()
+//        tableView.mj_footer.beginRefreshing()
     }
     
+    //设置下拉刷新的tipLabel
+    private func setupTipLabel() {
+        //1.将TipLabel添加到父控件中
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        
+        //设置tipLabel的frame
+        tipLabel.frame = CGRect(x: 0, y: 10, width: UIScreen.main.bounds.width, height: 32)
+        
+        //设置tipLabel的属性
+        tipLabel.isHidden = true
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.textAlignment = .center
+        
+    }
+    
+    //显示tipLabel
+    private func showTipLabel(count: Int) {
+        
+        tipLabel.isHidden = false
+        tipLabel.text = count == 0 ? "没有新数据" : "更新了\(count)条微博"
+        
+        //执行动画
+        UIView.animate(withDuration: 1, animations: {
+            self.tipLabel.frame.origin.y = 44
+        }) { (_) in
+            UIView.animate(withDuration: 1, delay: 2, options: [], animations: {
+                self.tipLabel.frame.origin.y = 10
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+            })
+        }
+    }
 }
 
 //MARK: - 监听事件
@@ -149,6 +188,7 @@ extension HomeViewController {
             maxID = statuses.last?.statusOpt?.mid ?? 0
             maxID = maxID == 0 ? 0 : (maxID - 1)
         }
+        
         NetworkTools.shareInstance.loadStatuses(since_id: sinceId, max_id: maxID) { (result, error) in
             
             //1.错误校验
@@ -217,6 +257,9 @@ extension HomeViewController {
             
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            
+            //显示提示的label
+            self.showTipLabel(count: statuses.count)
         }
         
     }
