@@ -18,6 +18,9 @@ class PicPickerCollectionView: UICollectionView {
         didSet{
             reloadData()
             
+            if images.count == 0 {
+                
+            }
         }
         
     }
