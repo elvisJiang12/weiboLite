@@ -10,11 +10,11 @@ import UIKit
 import SDWebImage
 
 ///边缘间隔
-let edgeMargin : CGFloat = 15
+private let edgeMargin : CGFloat = 15
 ///图片间的间隔
-let cellMargin : CGFloat = 5
+private let cellMargin : CGFloat = 5
 ///单个图片的高度和宽度(正方形)
-let picCellWH = (UIScreen.main.bounds.width - edgeMargin * 2 - cellMargin * 2) / 3
+private let picCellWH = (UIScreen.main.bounds.width - edgeMargin * 2 - cellMargin * 2) / 3
 
 
 class HomeTableViewCell: UITableViewCell {

@@ -14,3 +14,6 @@ let redirect_uri = "http://open.weibo.com"
 let app_secret = "2dfe51a36f6eb8631a991935cdbb2297"
 
 
+//MARK:- Notification通知常量
+let PicPickerAddPhotoNote = NSNotification.Name(rawValue: "PicPickerAddPhotoNote")
+

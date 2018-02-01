@@ -54,6 +54,10 @@ extension MainViewController {
         //设置发布按钮"[+]"的位置
         composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
         
+        if !UserAccountTools.shareInstance.isLogin() {
+            composeBtn.isUserInteractionEnabled = false
+        }
+        
         //将composeBtn添加到tabBar中
         tabBar.addSubview(composeBtn)
         
@@ -86,7 +90,10 @@ extension MainViewController {
 extension MainViewController {
     
     @objc private func composeBtnClick() {
-        printLog("用户点击了composebtn")
+        let composeVc = ComposeViewController()
+        let composeNav = UINavigationController.init(rootViewController: composeVc)
+        
+        present(composeNav, animated: true, completion: nil)
     }
     
     

@@ -40,6 +40,12 @@
 		147CA34A200E6FB500543180 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA348200E6FB500543180 /* Compose.storyboard */; };
 		147CA34C200E6FED00543180 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34B200E6FED00543180 /* Discover.storyboard */; };
 		147CA34F200E702600543180 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34D200E702600543180 /* Profile.storyboard */; };
+		14B765062021CFA000E7B63D /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B765042021CFA000E7B63D /* ComposeViewController.swift */; };
+		14B765072021CFA000E7B63D /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B765052021CFA000E7B63D /* ComposeViewController.xib */; };
+		14B7650A2021E42D00E7B63D /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B765092021E42D00E7B63D /* ComposeTitleView.swift */; };
+		14B7654020231DE500E7B63D /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7653F20231DE500E7B63D /* PicPickerCollectionView.swift */; };
+		14B76543202322D100E7B63D /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B76541202322D100E7B63D /* PicPickerViewCell.swift */; };
+		14B76544202322D100E7B63D /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B76542202322D100E7B63D /* PicPickerViewCell.xib */; };
 		14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92A2017662400F4CE5D /* OAuthViewController.swift */; };
 		14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DEC92B2017662400F4CE5D /* OAuthViewController.xib */; };
 		14DEC92F20176FAC00F4CE5D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92E20176FAC00F4CE5D /* Common.swift */; };
@@ -84,6 +90,12 @@
 		147CA349200E6FB500543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
 		147CA34B200E6FED00543180 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		147CA34E200E702600543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		14B765042021CFA000E7B63D /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		14B765052021CFA000E7B63D /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		14B765092021E42D00E7B63D /* ComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		14B7653F20231DE500E7B63D /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		14B76541202322D100E7B63D /* PicPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		14B76542202322D100E7B63D /* PicPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		14DEC92A2017662400F4CE5D /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		14DEC92B2017662400F4CE5D /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		14DEC92E20176FAC00F4CE5D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -196,6 +208,7 @@
 		14216016200E440400C6B746 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				14B765082021E40A00E7B63D /* Compose */,
 				144AD6E42019FD6B002A5AA0 /* Welcome */,
 				14DEC929201765B500F4CE5D /* OAuth */,
 				140E091E200F4CFD0035150C /* Visitor */,
@@ -275,6 +288,27 @@
 				144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		14B765082021E40A00E7B63D /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				14B7653E202318C700E7B63D /* PicPicker */,
+				14B765042021CFA000E7B63D /* ComposeViewController.swift */,
+				14B765052021CFA000E7B63D /* ComposeViewController.xib */,
+				14B765092021E42D00E7B63D /* ComposeTitleView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		14B7653E202318C700E7B63D /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				14B7653F20231DE500E7B63D /* PicPickerCollectionView.swift */,
+				14B76541202322D100E7B63D /* PicPickerViewCell.swift */,
+				14B76542202322D100E7B63D /* PicPickerViewCell.xib */,
+			);
+			path = PicPicker;
 			sourceTree = "<group>";
 		};
 		14DEC929201765B500F4CE5D /* OAuth */ = {
@@ -367,12 +401,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B765072021CFA000E7B63D /* ComposeViewController.xib in Resources */,
 				14215F95200DCBF000C6B746 /* LaunchScreen.storyboard in Resources */,
 				147CA34A200E6FB500543180 /* Compose.storyboard in Resources */,
 				147CA34F200E702600543180 /* Profile.storyboard in Resources */,
 				14216032200E6DCC00C6B746 /* Home.storyboard in Resources */,
 				140AF8292010DB91000E9CE4 /* PopoverViewController.xib in Resources */,
 				144AD6E82019FDEB002A5AA0 /* WelcomeViewController.xib in Resources */,
+				14B76544202322D100E7B63D /* PicPickerViewCell.xib in Resources */,
 				14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */,
 				14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */,
 				14215F90200DCBF000C6B746 /* Main.storyboard in Resources */,
@@ -455,18 +491,22 @@
 				144AD6ED201AD065002A5AA0 /* NSDate-Extention.swift in Sources */,
 				144AD6E72019FDEB002A5AA0 /* WelcomeViewController.swift in Sources */,
 				14DEC9312018664E00F4CE5D /* NetworkTools.swift in Sources */,
+				14B7650A2021E42D00E7B63D /* ComposeTitleView.swift in Sources */,
 				14DEC9332018770E00F4CE5D /* UserAccount.swift in Sources */,
 				140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */,
 				1421602E200E6D1300C6B746 /* HomeViewController.swift in Sources */,
 				144AD6EF201AD8B3002A5AA0 /* StatusUserInfo.swift in Sources */,
 				144AD6E22019EF2B002A5AA0 /* UserAccountTools.swift in Sources */,
+				14B765062021CFA000E7B63D /* ComposeViewController.swift in Sources */,
 				144AD6EB201A4D9D002A5AA0 /* Status.swift in Sources */,
 				140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */,
 				144AD6F3201B0624002A5AA0 /* HomeTableViewCell.swift in Sources */,
 				1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */,
 				14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */,
 				14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */,
+				14B7654020231DE500E7B63D /* PicPickerCollectionView.swift in Sources */,
 				140AF8282010DB91000E9CE4 /* PopoverViewController.swift in Sources */,
+				14B76543202322D100E7B63D /* PicPickerViewCell.swift in Sources */,
 				140AF8242010B5EF000E9CE4 /* TitleButton.swift in Sources */,
 				140AF82D2014F053000E9CE4 /* JWWPopoverAnimator.swift in Sources */,
 				140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */,
