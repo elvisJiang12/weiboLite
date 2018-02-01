@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController" customModule="weiboLite" customModuleProvider="target">
             <connections>
                 <outlet property="picPickerBtn" destination="abK-Ns-86k" id="KHG-8i-pDh"/>
+                <outlet property="picPickerCollectionView" destination="uLw-ER-PUY" id="keF-jd-qek"/>
                 <outlet property="picPickerCollectionViewH" destination="HuK-wi-P7e" id="sVC-Rj-4tY"/>
                 <outlet property="placeHolderLabel" destination="HNO-vb-g2E" id="njG-FF-zER"/>
                 <outlet property="textView" destination="Rg2-rg-qtK" id="L8p-uh-jjX"/>
@@ -45,6 +46,7 @@
                 </textField>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uLw-ER-PUY" customClass="PicPickerCollectionView" customModule="weiboLite" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" id="HuK-wi-P7e"/>
                     </constraints>

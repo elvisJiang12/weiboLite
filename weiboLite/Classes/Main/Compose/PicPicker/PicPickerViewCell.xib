@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTP-ru-Z7O" userLabel="加号">
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTP-ru-Z7O" userLabel="加号">
                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                         <state key="normal" backgroundImage="compose_pic_add"/>
                         <state key="highlighted" backgroundImage="compose_pic_add_highlighted"/>
@@ -27,6 +27,9 @@
                             <action selector="addPhotoClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="EDW-mT-n99"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-Qx-zOm">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4Q-6B-Rjb" userLabel="删除">
                         <rect key="frame" x="46" y="0.0" width="24" height="24"/>
                         <constraints>
@@ -34,20 +37,32 @@
                             <constraint firstAttribute="width" constant="24" id="IVz-Dt-iG5"/>
                         </constraints>
                         <state key="normal" image="compose_photo_close"/>
+                        <connections>
+                            <action selector="removePhotoClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="kd7-B8-2SQ"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="iQO-Qx-zOm" secondAttribute="trailing" id="4r7-x7-wo0"/>
                 <constraint firstAttribute="bottom" secondItem="TTP-ru-Z7O" secondAttribute="bottom" id="ECe-bA-pFz"/>
                 <constraint firstAttribute="trailing" secondItem="h4Q-6B-Rjb" secondAttribute="trailing" id="M0A-pU-yy1"/>
                 <constraint firstItem="TTP-ru-Z7O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SHP-tK-6ZS"/>
+                <constraint firstAttribute="bottom" secondItem="iQO-Qx-zOm" secondAttribute="bottom" id="Zwa-sA-SqC"/>
+                <constraint firstItem="iQO-Qx-zOm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aZ3-G8-d75"/>
                 <constraint firstItem="h4Q-6B-Rjb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ack-rn-qwX"/>
+                <constraint firstItem="iQO-Qx-zOm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fkZ-uN-jF0"/>
                 <constraint firstAttribute="trailing" secondItem="TTP-ru-Z7O" secondAttribute="trailing" id="n9s-kA-OR6"/>
                 <constraint firstItem="TTP-ru-Z7O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tzo-HD-Fzm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="20" height="26"/>
-            <point key="canvasLocation" x="10" y="23"/>
+            <connections>
+                <outlet property="imageView" destination="iQO-Qx-zOm" id="Flp-4Z-jVK"/>
+                <outlet property="photo" destination="TTP-ru-Z7O" id="Je8-ZE-Mpg"/>
+                <outlet property="removeBtn" destination="h4Q-6B-Rjb" id="bdb-rg-5IT"/>
+            </connections>
+            <point key="canvasLocation" x="58" y="16"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -17,7 +17,7 @@ class UserAccountTools { //无需继承任何类, 更轻量级
     //MARK:- 定义一个计算属性, 获取沙盒路径
     var filePath : String {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! + "/userInfo.plist"
-        printLog(path)
+        
         return path
     }
     

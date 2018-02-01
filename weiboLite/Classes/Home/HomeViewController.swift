@@ -242,7 +242,6 @@ extension HomeViewController {
             for picURL in status.picURLs {
                 group.enter()  //进入group
                 SDWebImageManager.shared().imageDownloader?.downloadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _) in
-                    printLog(picURL)
                     group.leave()   //离开group
                 })
             }

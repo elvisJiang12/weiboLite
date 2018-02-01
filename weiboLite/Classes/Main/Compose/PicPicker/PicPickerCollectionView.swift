@@ -13,6 +13,16 @@ private let edgeMargin : CGFloat = 15
 
 class PicPickerCollectionView: UICollectionView {
 
+    //MARK:- 自定义的属性
+    var images : [UIImage] = [UIImage]() {
+        didSet{
+            reloadData()
+            
+        }
+        
+    }
+    
+    //MARK:- 系统回调的函数
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,15 +47,23 @@ class PicPickerCollectionView: UICollectionView {
 //MARK:- PicPickerCollectionView的数据源方法
 extension PicPickerCollectionView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return images.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //1.创建cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pickPickerCell_id, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pickPickerCell_id, for: indexPath) as! PicPickerViewCell
         
         //2.给cell设置数据
-        cell.backgroundColor = UIColor.red
+        cell.imageIndex = indexPath.item
+        
+        //存在数组越界的问题: 因为indexPath.count起始值为0, images.count起始值为1
+        if indexPath.item + 1 <= images.count {
+            cell.image = images[indexPath.item]
+        } else {
+            cell.image = nil
+        }
+        //或者: cell.image = indexPath.item <= images.count - 1 ? images[indexPath.item] : nil
         
         return cell
     }
