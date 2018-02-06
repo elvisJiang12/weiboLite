@@ -8,28 +8,16 @@
 
 import UIKit
 
-class MessageViewController: UITabBarController {
+class MessageViewController: VisitorBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //设置访客视图的内容
+        visitorView.setupVisitorViewInfo(iconName: "visitordiscover_image_message",
+                                         text: "登录后，别人评论你的微博，给你发消息，都会在这里收到通知")
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
