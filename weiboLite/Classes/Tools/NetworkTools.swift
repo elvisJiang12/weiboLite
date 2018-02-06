@@ -123,3 +123,28 @@ extension NetworkTools {
     }
 
 }
+
+
+//MARK:- 第三方分享一条链接到微博 https://api.weibo.com/2/statuses/share.json
+extension NetworkTools {
+    ///用户发送微博
+    func sendStatus(statusText : String, isSuccess : @escaping (_ isSuccess : Bool)->()) {
+        //1.获取请求的URLString
+        let urlString = "https://api.weibo.com/2/statuses/share.json"
+        
+        //2.请求的参数
+        let parameters: [String : Any] = ["access_token" : (UserAccountTools.shareInstance.userInfo?.access_token)!, "status" : statusText]
+        
+        //3.发送网络请求
+        request(requestType: .POST, urlString: urlString, parameters: parameters) { (result, error) in
+            if result != nil {
+                isSuccess(true)
+            } else {
+                isSuccess(false)
+                printLog(error)
+            }
+        }
+    }
+
+
+}

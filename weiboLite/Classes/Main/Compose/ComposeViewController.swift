@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ComposeViewController: UIViewController {
     //MARK:-连线控件的属性
@@ -100,7 +101,22 @@ extension ComposeViewController {
     }
     
     @objc private func composeBtnClick() {
-        print(textView.getEmoticon())
+        //1.退出键盘
+        textView.resignFirstResponder()
+        
+        //2.调用接口发送微博
+        let statusText = textView.getEmoticon()
+        NetworkTools.shareInstance.sendStatus(statusText: statusText) { (isSuccess) in
+            if !isSuccess {
+                SVProgressHUD.showError(withStatus: "新浪接口限制, 发送微博失败")
+                return
+            } else {
+                SVProgressHUD.showSuccess(withStatus: "发送微博成功")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+        
     }
     
     @objc private func keyboardWillChangeFrame(note : Notification) {
