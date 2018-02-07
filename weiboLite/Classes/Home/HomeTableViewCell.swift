@@ -77,7 +77,7 @@ class HomeTableViewCell: UITableViewCell {
             sourceLabel.text = status.souceForDisplay
             
             //7.设置微博正文
-            contentLabel.text = status.statusOpt?.text
+            contentLabel.attributedText = MatchEmoticon.shareInstance.matchAttrString(text: (status.statusOpt?.text)!, font: contentLabel.font)
             
             //8.计算picView的高度和宽度
             let picViewSize = calculatePicViewSize(picNum: status.picURLs.count)
@@ -91,7 +91,8 @@ class HomeTableViewCell: UITableViewCell {
             if status.statusOpt?.retweeted_status != nil {
                 if let name = status.statusOpt?.retweeted_status?.userInfo?.screen_name,
                     let retweetedText = status.statusOpt?.retweeted_status?.text {
-                    retweetedLabel.text = "@" + name + ":" + retweetedText
+                    let tempText = "@" + name + ":" + retweetedText
+                    retweetedLabel.attributedText = MatchEmoticon.shareInstance.matchAttrString(text: tempText, font: retweetedLabel.font)
                 }
                 retweetedBgView.isHidden = false
                 contentToRetweeted.constant = 16
