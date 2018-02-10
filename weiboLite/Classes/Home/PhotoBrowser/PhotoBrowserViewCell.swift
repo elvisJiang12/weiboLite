@@ -9,6 +9,11 @@
 import UIKit
 import SDWebImage
 
+//MARK:- 自定义代理协议,和方法
+protocol PhotoBrowserViewCellDelegate : NSObjectProtocol {
+    func imageViewClick()
+}
+
 class PhotoBrowserViewCell: UICollectionViewCell {
 
     @IBOutlet var scrollView: UIScrollView!
@@ -16,6 +21,7 @@ class PhotoBrowserViewCell: UICollectionViewCell {
     
     
     private lazy var progressView = ProgressView()
+    var delegate : PhotoBrowserViewCellDelegate?
     
     var picURL : URL? {
         didSet {
@@ -74,6 +80,17 @@ class PhotoBrowserViewCell: UICollectionViewCell {
         progressView.center = CGPoint(x: UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.5)
         progressView.isHidden = true
         progressView.backgroundColor = UIColor.clear
+        
+        //监听imageView的点击
+        let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(PhotoBrowserViewCell.imageViewClick))
+        imageView.addGestureRecognizer(tapGes)
+        imageView.isUserInteractionEnabled = true
     }
 
+}
+
+extension PhotoBrowserViewCell {
+    @objc private func imageViewClick() {
+        delegate?.imageViewClick()
+    }
 }

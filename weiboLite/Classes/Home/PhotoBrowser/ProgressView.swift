@@ -14,7 +14,9 @@ class ProgressView: UIView {
     var progress : CGFloat = 0 {
         didSet {
             //调用绘制方法
-            setNeedsDisplay()
+            DispatchQueue.main.async { //调用主线程
+                self.setNeedsDisplay()
+            }
         }
     }
     

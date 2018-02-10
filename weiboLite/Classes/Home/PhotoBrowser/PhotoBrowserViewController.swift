@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 private let photoBrowserCell_id = "photoBrowserCell_id"
 
@@ -87,6 +88,7 @@ extension PhotoBrowserViewController {
         
         //监听按钮的点击
         closeBtn.addTarget(self, action: #selector(PhotoBrowserViewController.closeBtnClick), for: .touchUpInside)
+        saveBtn.addTarget(self, action: #selector(PhotoBrowserViewController.saveBtnClick), for: .touchUpInside)
     }
 }
 
@@ -103,12 +105,21 @@ extension PhotoBrowserViewController : UICollectionViewDataSource {
         
         
         //设置cell的数据
-//        cell.cellSize = collectionView.bounds.size
         cell.picURL = picURLs[indexPath.item]
+        cell.delegate = self
         
         return cell
         
     }
+}
+
+//MARK:- PhotoBrowserViewCell的代理方法
+extension PhotoBrowserViewController : PhotoBrowserViewCellDelegate {
+    func imageViewClick() {
+        closeBtnClick()
+    }
+    
+    
 }
 
 //MARK:- 自定义CollectionViewLayout
@@ -134,6 +145,27 @@ extension PhotoBrowserViewController {
     
     @objc private func closeBtnClick() {
         dismiss(animated: true) {
+        }
+    }
+    
+    @objc private func saveBtnClick() {
+        //1.获取当天正在显示的image
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        guard let image = cell.imageView.image else {
+            printLog("未获取到当前显示的图片")
+            return
+        }
+        
+        //2.保存image至相册
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(PhotoBrowserViewController.image), nil)
+    }
+    
+    //  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+    @objc private func image(image : UIImage, didFinishSavingWithError error : Error?, contextInfo : Any) {
+        if error != nil {
+            SVProgressHUD.showError(withStatus: "保存失败")
+        } else {
+            SVProgressHUD.showSuccess(withStatus: "保存成功")
         }
     }
 }
