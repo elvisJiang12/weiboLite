@@ -56,8 +56,15 @@ class HomeViewController: VisitorBaseViewController {
         
         //设置刷新提示的label
         setupTipLabel()
+        
+        //注册通知
+        setupNotifications()
     }
-
+    
+    //移除通知
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
 }
 //MARK: - 设置"首页"的UI界面
@@ -138,6 +145,11 @@ extension HomeViewController {
             })
         }
     }
+
+    //创建通知
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.showPhoteBrowser), name: ShowPhoteBrowserNote, object: nil)
+    }
 }
 
 //MARK: - 监听事件
@@ -161,6 +173,20 @@ extension HomeViewController {
         
     }
    
+    
+    ///弹出图片控制器
+    @objc private func showPhoteBrowser(note : Notification) {
+        //取出数据
+        let indexPath = note.userInfo![ShowPhoteBrowserIndexPathKey] as! IndexPath
+        let picURLs = note.userInfo![ShowPhoteBrowserURLsKey] as! [URL]
+        
+        //创建图片浏览控制器
+        let photoBrowserVc = PhotoBrowserViewController.init(indexPath: indexPath, picURLs: picURLs)
+        
+        //modal的形式弹出控制器
+        present(photoBrowserVc, animated: true) {
+        }
+    }
 }
 
 //MARK: - 请求网络数据
@@ -288,6 +314,7 @@ extension HomeViewController {
         return cell
         
     }
+    
     
 }
 

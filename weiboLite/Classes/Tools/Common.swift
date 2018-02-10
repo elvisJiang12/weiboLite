@@ -18,3 +18,8 @@ let app_secret = "2dfe51a36f6eb8631a991935cdbb2297"
 let PicPickerAddPhotoNote = NSNotification.Name(rawValue: "PicPickerAddPhotoNote")
 let PicPickerRemovePhotoNote = NSNotification.Name(rawValue: "PicPickerRemovePhotoNote")
 
+//MARK:- 照片浏览器的通知常量
+let ShowPhoteBrowserNote = NSNotification.Name(rawValue: "ShowPhoteBrowserNote")
+let ShowPhoteBrowserIndexPathKey = "ShowPhoteBrowserIndexPathKey"
+let ShowPhoteBrowserURLsKey = "ShowPhoteBrowserURLsKey"
+

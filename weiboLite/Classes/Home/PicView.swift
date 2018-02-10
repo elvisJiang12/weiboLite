@@ -21,8 +21,9 @@ class PicView: UICollectionView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //设置数据源
+        //设置数据源和代理
         dataSource = self
+        delegate = self
     }
 
 }
@@ -46,4 +47,19 @@ extension PicView : UICollectionViewDataSource {
     }
     
     
+}
+
+//MARK:- UICollectionView的代理方法
+extension PicView : UICollectionViewDelegate {
+    
+    ///监听cell的点击
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //获取需要传递的参数
+        let userInfo = [ShowPhoteBrowserIndexPathKey : indexPath,
+                        ShowPhoteBrowserURLsKey : picURLs] as [String : Any]
+        
+        //发出通知, 传递给viewController
+        NotificationCenter.default.post(name: ShowPhoteBrowserNote, object: nil, userInfo: userInfo)
+    }
 }

@@ -48,4 +48,14 @@ extension UIButton {
         sizeToFit() //根据图片的大小设置button尺寸
     }
     
+    
+    convenience init(bgClolor: UIColor, fontSize: CGFloat, title : String) {
+        
+        self.init()
+        
+        setTitle(title, for: .normal)
+        backgroundColor = bgClolor
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+    }
+    
 }
