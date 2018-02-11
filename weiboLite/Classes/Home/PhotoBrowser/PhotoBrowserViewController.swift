@@ -51,7 +51,7 @@ class PhotoBrowserViewController: UINavigationController {
     override func loadView() {
         super.loadView()
         
-        view.bounds.size.width += 20
+        view.frame.size.width += 20
     }
 
 }
@@ -66,7 +66,7 @@ extension PhotoBrowserViewController {
         view.addSubview(saveBtn)
         
         //设置子控件的frame
-        collectionView.frame = view.bounds
+        collectionView.frame = view.frame
         
         closeBtn.snp.makeConstraints { (maker) in
             maker.left.equalTo(view.snp.left).offset(20)

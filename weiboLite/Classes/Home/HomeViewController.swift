@@ -17,6 +17,7 @@ class HomeViewController: VisitorBaseViewController {
     private lazy var titleBtn = TitleButton()
     private lazy var statuses = [StatusModelOpt]()
     private lazy var tipLabel = UILabel()
+    private lazy var photoBrowserAnimator = PhotoBrowserAnimator()
     
     //注意: 在闭包中如果使用当前对象的属性或调用方法, 也需要加self
     //总结: 两个地方不能省略self: 1>如果一个函数中变量名出线歧义(相同名);2>在闭包中使用当前对象的属性和方法
@@ -182,6 +183,12 @@ extension HomeViewController {
         
         //创建图片浏览控制器
         let photoBrowserVc = PhotoBrowserViewController.init(indexPath: indexPath, picURLs: picURLs)
+        
+        //设置控制器的弹出样式, modalPresentationStyle.custom表示弹出后,以前的view不删除
+        photoBrowserVc.modalPresentationStyle = .custom
+        
+        //3.设置转场动画的代理
+        photoBrowserVc.transitioningDelegate = photoBrowserAnimator
         
         //modal的形式弹出控制器
         present(photoBrowserVc, animated: true) {

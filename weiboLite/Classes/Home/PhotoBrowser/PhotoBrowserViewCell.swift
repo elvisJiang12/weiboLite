@@ -70,7 +70,7 @@ class PhotoBrowserViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        scrollView.bounds.size.width -= 20
+        scrollView.frame.size.width -= 20
         
         //添加子控件
         self.addSubview(progressView)

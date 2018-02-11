@@ -13,6 +13,7 @@
 		140AF8292010DB91000E9CE4 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140AF8272010DB90000E9CE4 /* PopoverViewController.xib */; };
 		140AF82B2010E95D000E9CE4 /* JWWPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF82A2010E95D000E9CE4 /* JWWPresentationController.swift */; };
 		140AF82D2014F053000E9CE4 /* JWWPopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AF82C2014F053000E9CE4 /* JWWPopoverAnimator.swift */; };
+		140CC82B20303CF900277E1E /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140CC82A20303CF900277E1E /* PhotoBrowserAnimator.swift */; };
 		140E091D200F29CF0035150C /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091C200F29CF0035150C /* UIButton-Extension.swift */; };
 		140E0921200F4D2F0035150C /* VisitorBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */; };
 		140E0924200F54550035150C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E0923200F54550035150C /* VisitorView.swift */; };
@@ -76,6 +77,7 @@
 		140AF8272010DB90000E9CE4 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		140AF82A2010E95D000E9CE4 /* JWWPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWWPresentationController.swift; sourceTree = "<group>"; };
 		140AF82C2014F053000E9CE4 /* JWWPopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWWPopoverAnimator.swift; sourceTree = "<group>"; };
+		140CC82A20303CF900277E1E /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
 		140E091C200F29CF0035150C /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		140E091F200F4D2F0035150C /* VisitorBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorBaseViewController.swift; sourceTree = "<group>"; };
 		140E0923200F54550035150C /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -287,8 +289,8 @@
 				144AD6E9201A4D61002A5AA0 /* DataModel */,
 				140AF8252010DB69000E9CE4 /* UIPopover */,
 				14216031200E6DCC00C6B746 /* Home.storyboard */,
-				144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */,
 				1421602D200E6D1300C6B746 /* HomeViewController.swift */,
+				144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */,
 				141132BA201CDFA7005A579C /* PicView.swift */,
 			);
 			name = Home;
@@ -356,6 +358,7 @@
 				1413D67E202E29A0003D0F61 /* PhotoBrowserViewCell.swift */,
 				1413D67F202E29A0003D0F61 /* PhotoBrowserViewCell.xib */,
 				1413D682202EE7DA003D0F61 /* ProgressView.swift */,
+				140CC82A20303CF900277E1E /* PhotoBrowserAnimator.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				14B21298202B6C5B00BCF00A /* EmoticonManager.swift in Sources */,
 				14B2128E202B6C5B00BCF00A /* Commons.swift in Sources */,
 				14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */,
+				140CC82B20303CF900277E1E /* PhotoBrowserAnimator.swift in Sources */,
 				14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */,
 				14B7654020231DE500E7B63D /* PicPickerCollectionView.swift in Sources */,
 				140AF8282010DB91000E9CE4 /* PopoverViewController.swift in Sources */,
