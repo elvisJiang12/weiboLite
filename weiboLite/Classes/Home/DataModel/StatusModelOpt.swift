@@ -21,7 +21,6 @@ class StatusModelOpt: NSObject {
     var vip_Image : UIImage?                //会员等级对应的Image
     var profileURL : URL?                   //用户头像的URL
     var picURLs : [URL] = [URL]()           //微博的图片地址
-    //var middlePicURL : String?              //微博图片的大图
     
     //MARK:- 构造函数
     init(statusOpt : Status) {
@@ -73,25 +72,18 @@ class StatusModelOpt: NSObject {
         profileURL = URL.init(string: profileURLString)
         
         //处理微博的配图地址, String -> URL
-        //如果微博图片数量=1, 则取bmiddle_pic供展示
-        if statusOpt.pic_urls?.count == 1 {
-            guard let middlePicURL = statusOpt.bmiddle_pic else {
-                printLog("未获取到bmiddle_pic的URL")
-                return
-            }
-            picURLs.append(URL.init(string: middlePicURL)!)
-        } else {
-            //如果微博的图片数量为0, 则取转发微博的图片
-            let tempURLDict = statusOpt.pic_urls?.count != 0 ? statusOpt.pic_urls : statusOpt.retweeted_status?.pic_urls
-            
-            if let picURLDictArray = tempURLDict {
-                for picURLDict in picURLDictArray {
-                    //遍历数组, 通过key = thumbnail_pic获取图片地址的String
-                    guard let picURLString = picURLDict["thumbnail_pic"] else {
-                        continue
-                    }
-                    picURLs.append(URL.init(string: picURLString)!)
+        //如果微博的图片数量为0, 则取转发微博的图片
+        let tempURLDict = statusOpt.pic_urls?.count != 0 ? statusOpt.pic_urls : statusOpt.retweeted_status?.pic_urls
+        
+        if let picURLDictArray = tempURLDict {
+            for picURLDict in picURLDictArray {
+                //遍历数组, 通过key = thumbnail_pic获取图片地址的String
+                guard let picURLString = picURLDict["thumbnail_pic"] else {
+                    continue
                 }
+                //URL地址替换成高清图的URL
+                let picURLHD = (picURLString as NSString).replacingOccurrences(of: "thumbnail", with: "bmiddle")
+                picURLs.append(URL.init(string: picURLHD)!)
             }
         }
         

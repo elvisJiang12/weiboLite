@@ -85,6 +85,10 @@ extension PhotoBrowserAnimator : UIViewControllerAnimatedTransitioning {
         transitionContext.containerView.addSubview(imageView)
         imageView.frame = startRect
         
+        //平滑过渡动画
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        
         //3.执行动画(渐入渐出动画)
         presentedView.alpha = 0.0
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {

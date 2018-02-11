@@ -156,10 +156,13 @@ extension HomeTableViewCell {
                 return CGSize.init(width: 250, height: 250)
             }
             
-            if image.size.height * 0.4 > 250 {
-                layer.itemSize = CGSize.init(width: image.size.width * 0.4, height: 250)
+            let w : CGFloat = 200
+            let h = w / (cacheImage?.size.width)! * (cacheImage?.size.height)!
+            
+            if h * 0.4 > w {
+                layer.itemSize = CGSize.init(width: h * 0.4, height: h)
             } else {
-                layer.itemSize = CGSize.init(width: image.size.width * 0.4, height: image.size.height * 0.4)
+                layer.itemSize = CGSize.init(width: w, height: h)
             }
             //返回整个picView的size = 图片的size
             return layer.itemSize

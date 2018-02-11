@@ -138,6 +138,10 @@ extension PhotoBrowserViewController : AnimationDismissDelegate {
         imageView.image = cell.imageView.image
         imageView.frame = cell.imageView.frame
         
+        //平滑过渡动画
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        
         return imageView
     }
     

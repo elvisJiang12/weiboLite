@@ -264,7 +264,6 @@
 		14216026200E6CD400C6B746 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				144AD6E32019FD4B002A5AA0 /* Welcome */,
 				147CA34D200E702600543180 /* Profile.storyboard */,
 				14216029200E6CFB00C6B746 /* ProfileViewController.swift */,
 			);
@@ -295,14 +294,6 @@
 			);
 			name = Home;
 			path = Classes/Home;
-			sourceTree = SOURCE_ROOT;
-		};
-		144AD6E32019FD4B002A5AA0 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Welcome;
-			path = Classes/Main/Welcome;
 			sourceTree = SOURCE_ROOT;
 		};
 		144AD6E42019FD6B002A5AA0 /* Welcome */ = {

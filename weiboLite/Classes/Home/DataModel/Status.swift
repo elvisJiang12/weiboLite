@@ -19,7 +19,7 @@ class Status: NSObject {
     var source : String?                    //微博来源
     var userInfo : StatusUserInfo?          //微博作者的用户信息
     var pic_urls : [[String : String]]?     //微博的图片地址
-    var bmiddle_pic : String?               //微博图片的大图
+    //var bmiddle_pic : String?               //微博图片的大图
     var retweeted_status : Status?          //转发的原微博
     
     //MARK:- 自定义构造函数
