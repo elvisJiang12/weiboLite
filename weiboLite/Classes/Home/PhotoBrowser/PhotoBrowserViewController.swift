@@ -122,6 +122,28 @@ extension PhotoBrowserViewController : PhotoBrowserViewCellDelegate {
     
 }
 
+//MARK:- AnimationDismissDelegate的代理方法
+extension PhotoBrowserViewController : AnimationDismissDelegate {
+    func indexPathForDismiss() -> IndexPath {
+        //获取当前显示图片的indexPath
+        let cell = collectionView.visibleCells.first!
+        return collectionView.indexPath(for: cell)!
+    }
+    
+    func imageViewForDismiss() -> UIImageView {
+        let imageView = UIImageView()
+        
+        //设置imageView的属性
+        let cell = collectionView.visibleCells.first as! PhotoBrowserViewCell
+        imageView.image = cell.imageView.image
+        imageView.frame = cell.imageView.frame
+        
+        return imageView
+    }
+    
+    
+}
+
 //MARK:- 自定义CollectionViewLayout
 class PhotoBrowserCollectionViewLayout : UICollectionViewFlowLayout {
     override func prepare() {

@@ -177,18 +177,24 @@ extension HomeViewController {
     
     ///弹出图片控制器
     @objc private func showPhoteBrowser(note : Notification) {
-        //取出数据
+        //0.取出数据
         let indexPath = note.userInfo![ShowPhoteBrowserIndexPathKey] as! IndexPath
         let picURLs = note.userInfo![ShowPhoteBrowserURLsKey] as! [URL]
+        let object = note.object as! PicView
         
-        //创建图片浏览控制器
+        //1.创建图片浏览控制器
         let photoBrowserVc = PhotoBrowserViewController.init(indexPath: indexPath, picURLs: picURLs)
         
-        //设置控制器的弹出样式, modalPresentationStyle.custom表示弹出后,以前的view不删除
+        //2.设置控制器的弹出样式, modalPresentationStyle.custom表示弹出后,以前的view不删除
         photoBrowserVc.modalPresentationStyle = .custom
         
         //3.设置转场动画的代理
         photoBrowserVc.transitioningDelegate = photoBrowserAnimator
+        
+        //4.设置动画的代理
+        photoBrowserAnimator.presentedDelegate = object
+        photoBrowserAnimator.indexPath = indexPath
+        photoBrowserAnimator.dismissDelegate = photoBrowserVc
         
         //modal的形式弹出控制器
         present(photoBrowserVc, animated: true) {

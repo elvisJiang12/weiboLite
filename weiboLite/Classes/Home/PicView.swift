@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PicView: UICollectionView {
 
@@ -60,6 +61,50 @@ extension PicView : UICollectionViewDelegate {
                         ShowPhoteBrowserURLsKey : picURLs] as [String : Any]
         
         //发出通知, 传递给viewController
-        NotificationCenter.default.post(name: ShowPhoteBrowserNote, object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(name: ShowPhoteBrowserNote, object: self, userInfo: userInfo)
     }
+}
+
+
+//MARK:- UICollectionView的代理方法
+extension PicView : AnimationPresentedDelegate {
+    func startRect(indexPath: IndexPath) -> CGRect {
+        //获取cell
+        let cell = self.cellForItem(at: indexPath)!
+        
+        //获取cell相对于整个screen的frame
+        return self.convert(cell.frame, to: UIApplication.shared.keyWindow!)
+    }
+    
+    func endRect(indexPath: IndexPath) -> CGRect {
+        //1.获取image对象
+        let picURL = picURLs[indexPath.item]
+        let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
+        
+        //2.计算动画结束后的frame
+        let w = UIScreen.main.bounds.width
+        let h = w / (image?.size.width)! * (image?.size.height)!
+        var y : CGFloat = 0
+        if h > UIScreen.main.bounds.height {//超长的图
+            y = 0
+        } else {
+            y = (UIScreen.main.bounds.height - h) * 0.5
+        }
+        
+        return CGRect(x: 0, y: y, width: w, height: h)
+    }
+    
+    func imageView(indexPath: IndexPath) -> UIImageView {
+        let imageView = UIImageView()
+        
+        //设置imageView的属性
+        let picURL = picURLs[indexPath.item]
+        let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
+        imageView.image = image
+        //imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }
+    
+
 }
