@@ -156,11 +156,11 @@ extension HomeTableViewCell {
                 return CGSize.init(width: 250, height: 250)
             }
             
-            let w : CGFloat = 200
-            let h = w / (cacheImage?.size.width)! * (cacheImage?.size.height)!
+            let w : CGFloat = 180
+            let h = w / (image.size.width) * (image.size.height)
             
-            if h * 0.4 > w {
-                layer.itemSize = CGSize.init(width: h * 0.4, height: h)
+            if h * 0.75 > w {
+                layer.itemSize = CGSize.init(width: w, height: w * 1.3)
             } else {
                 layer.itemSize = CGSize.init(width: w, height: h)
             }

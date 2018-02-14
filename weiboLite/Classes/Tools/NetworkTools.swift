@@ -136,14 +136,14 @@ extension NetworkTools {
         let parameters: [String : Any] = ["access_token" : (UserAccountTools.shareInstance.userInfo?.access_token)!, "status" : statusText]
         
         //3.发送网络请求
-//        request(requestType: .POST, urlString: urlString, parameters: parameters) { (result, error) in
-//            if result != nil {
-//                isSuccess(true)
-//            } else {
-//                isSuccess(false)
-//                printLog(error)
-//            }
-//        }
+        request(requestType: .POST, urlString: urlString, parameters: parameters) { (result, error) in
+            if result != nil {
+                isSuccess(true)
+            } else {
+                isSuccess(false)
+                printLog(error)
+            }
+        }
         isSuccess(false)
     }
 
