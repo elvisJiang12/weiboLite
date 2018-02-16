@@ -23,9 +23,7 @@
 		1413D681202E29A0003D0F61 /* PhotoBrowserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1413D67F202E29A0003D0F61 /* PhotoBrowserViewCell.xib */; };
 		1413D683202EE7DA003D0F61 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413D682202EE7DA003D0F61 /* ProgressView.swift */; };
 		14215F8B200DCBF000C6B746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14215F8A200DCBF000C6B746 /* AppDelegate.swift */; };
-		14215F90200DCBF000C6B746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14215F8E200DCBF000C6B746 /* Main.storyboard */; };
 		14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14215F91200DCBF000C6B746 /* Assets.xcassets */; };
-		14215F95200DCBF000C6B746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14215F93200DCBF000C6B746 /* LaunchScreen.storyboard */; };
 		14216018200E446100C6B746 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14216017200E446100C6B746 /* MainViewController.swift */; };
 		1421602A200E6CFB00C6B746 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14216029200E6CFB00C6B746 /* ProfileViewController.swift */; };
 		1421602C200E6D0800C6B746 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421602B200E6D0800C6B746 /* MessageViewController.swift */; };
@@ -61,7 +59,8 @@
 		14B76544202322D100E7B63D /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B76542202322D100E7B63D /* PicPickerViewCell.xib */; };
 		14BC5B8B203716F0001A97B6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BC5B8A203716F0001A97B6 /* Profile.storyboard */; };
 		14D8AB8B20371A3000F92CDB /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D8AB8A20371A3000F92CDB /* Message.storyboard */; };
-		14D8AB8D20371C2200F92CDB /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D8AB8C20371C2200F92CDB /* Compose.storyboard */; };
+		14D8ABA12037209C00F92CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D8AB9E2037205300F92CDB /* Main.storyboard */; };
+		14D8ABA22037216C00F92CDB /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D8AB8C20371C2200F92CDB /* Compose.storyboard */; };
 		14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92A2017662400F4CE5D /* OAuthViewController.swift */; };
 		14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DEC92B2017662400F4CE5D /* OAuthViewController.xib */; };
 		14DEC92F20176FAC00F4CE5D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92E20176FAC00F4CE5D /* Common.swift */; };
@@ -88,9 +87,7 @@
 		1413D682202EE7DA003D0F61 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		14215F87200DCBF000C6B746 /* weiboLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiboLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14215F8A200DCBF000C6B746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14215F8F200DCBF000C6B746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14215F91200DCBF000C6B746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14215F94200DCBF000C6B746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14215F96200DCBF000C6B746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14216017200E446100C6B746 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		14216029200E6CFB00C6B746 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +125,7 @@
 		14BC5B8A203716F0001A97B6 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		14D8AB8A20371A3000F92CDB /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		14D8AB8C20371C2200F92CDB /* Compose.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
+		14D8AB9F2037205300F92CDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14DEC92A2017662400F4CE5D /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		14DEC92B2017662400F4CE5D /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		14DEC92E20176FAC00F4CE5D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -217,9 +215,8 @@
 			children = (
 				14216011200E440400C6B746 /* Classes */,
 				14215F8A200DCBF000C6B746 /* AppDelegate.swift */,
-				14215F8E200DCBF000C6B746 /* Main.storyboard */,
 				14215F91200DCBF000C6B746 /* Assets.xcassets */,
-				14215F93200DCBF000C6B746 /* LaunchScreen.storyboard */,
+				14D8AB9E2037205300F92CDB /* Main.storyboard */,
 				14215F96200DCBF000C6B746 /* Info.plist */,
 			);
 			path = weiboLite;
@@ -465,11 +462,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D8AB8D20371C2200F92CDB /* Compose.storyboard in Resources */,
+				14D8ABA22037216C00F92CDB /* Compose.storyboard in Resources */,
+				14D8ABA12037209C00F92CDB /* Main.storyboard in Resources */,
 				14D8AB8B20371A3000F92CDB /* Message.storyboard in Resources */,
 				14BC5B8B203716F0001A97B6 /* Profile.storyboard in Resources */,
 				14B765072021CFA000E7B63D /* ComposeViewController.xib in Resources */,
-				14215F95200DCBF000C6B746 /* LaunchScreen.storyboard in Resources */,
 				1413D681202E29A0003D0F61 /* PhotoBrowserViewCell.xib in Resources */,
 				14B21291202B6C5B00BCF00A /* Emoticons.bundle in Resources */,
 				14216032200E6DCC00C6B746 /* Home.storyboard in Resources */,
@@ -478,7 +475,6 @@
 				14B76544202322D100E7B63D /* PicPickerViewCell.xib in Resources */,
 				14215F92200DCBF000C6B746 /* Assets.xcassets in Resources */,
 				14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */,
-				14215F90200DCBF000C6B746 /* Main.storyboard in Resources */,
 				147CA34C200E6FED00543180 /* Discover.storyboard in Resources */,
 				140E0926200F54950035150C /* VisitorView.xib in Resources */,
 			);
@@ -489,7 +485,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		09EE4636B7DA5B00A2B28F5B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -508,7 +504,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weiboLite/Pods-weiboLite-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
@@ -603,20 +599,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		14215F8E200DCBF000C6B746 /* Main.storyboard */ = {
+		14D8AB9E2037205300F92CDB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14215F8F200DCBF000C6B746 /* Base */,
+				14D8AB9F2037205300F92CDB /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		14215F93200DCBF000C6B746 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14215F94200DCBF000C6B746 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
