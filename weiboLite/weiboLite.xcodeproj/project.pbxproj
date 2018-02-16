@@ -40,10 +40,7 @@
 		144AD6EF201AD8B3002A5AA0 /* StatusUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */; };
 		144AD6F1201AF08E002A5AA0 /* StatusModelOpt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */; };
 		144AD6F3201B0624002A5AA0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */; };
-		147CA345200E6E9F00543180 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA343200E6E9F00543180 /* Message.storyboard */; };
-		147CA34A200E6FB500543180 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA348200E6FB500543180 /* Compose.storyboard */; };
 		147CA34C200E6FED00543180 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34B200E6FED00543180 /* Discover.storyboard */; };
-		147CA34F200E702600543180 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147CA34D200E702600543180 /* Profile.storyboard */; };
 		14B2128E202B6C5B00BCF00A /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B21282202B6C5B00BCF00A /* Commons.swift */; };
 		14B2128F202B6C5B00BCF00A /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B21283202B6C5B00BCF00A /* EmoticonViewController.swift */; };
 		14B21290202B6C5B00BCF00A /* EmoticonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B21284202B6C5B00BCF00A /* EmoticonCollectionViewCell.swift */; };
@@ -62,6 +59,9 @@
 		14B7654020231DE500E7B63D /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7653F20231DE500E7B63D /* PicPickerCollectionView.swift */; };
 		14B76543202322D100E7B63D /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B76541202322D100E7B63D /* PicPickerViewCell.swift */; };
 		14B76544202322D100E7B63D /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B76542202322D100E7B63D /* PicPickerViewCell.xib */; };
+		14BC5B8B203716F0001A97B6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BC5B8A203716F0001A97B6 /* Profile.storyboard */; };
+		14D8AB8B20371A3000F92CDB /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D8AB8A20371A3000F92CDB /* Message.storyboard */; };
+		14D8AB8D20371C2200F92CDB /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D8AB8C20371C2200F92CDB /* Compose.storyboard */; };
 		14DEC92C2017662400F4CE5D /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92A2017662400F4CE5D /* OAuthViewController.swift */; };
 		14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DEC92B2017662400F4CE5D /* OAuthViewController.xib */; };
 		14DEC92F20176FAC00F4CE5D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DEC92E20176FAC00F4CE5D /* Common.swift */; };
@@ -106,10 +106,7 @@
 		144AD6EE201AD8B3002A5AA0 /* StatusUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusUserInfo.swift; sourceTree = "<group>"; };
 		144AD6F0201AF08E002A5AA0 /* StatusModelOpt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModelOpt.swift; sourceTree = "<group>"; };
 		144AD6F2201B0624002A5AA0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		147CA344200E6E9F00543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Message.storyboard; sourceTree = "<group>"; };
-		147CA349200E6FB500543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
 		147CA34B200E6FED00543180 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
-		147CA34E200E702600543180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weiboLite/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		14B21282202B6C5B00BCF00A /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		14B21283202B6C5B00BCF00A /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
 		14B21284202B6C5B00BCF00A /* EmoticonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +125,9 @@
 		14B7653F20231DE500E7B63D /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
 		14B76541202322D100E7B63D /* PicPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
 		14B76542202322D100E7B63D /* PicPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
+		14BC5B8A203716F0001A97B6 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		14D8AB8A20371A3000F92CDB /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		14D8AB8C20371C2200F92CDB /* Compose.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
 		14DEC92A2017662400F4CE5D /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		14DEC92B2017662400F4CE5D /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		14DEC92E20176FAC00F4CE5D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -245,8 +245,8 @@
 				144AD6E42019FD6B002A5AA0 /* Welcome */,
 				14DEC929201765B500F4CE5D /* OAuth */,
 				140E091E200F4CFD0035150C /* Visitor */,
-				147CA348200E6FB500543180 /* Compose.storyboard */,
 				14216017200E446100C6B746 /* MainViewController.swift */,
+				14D8AB8C20371C2200F92CDB /* Compose.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 		14216026200E6CD400C6B746 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				147CA34D200E702600543180 /* Profile.storyboard */,
+				14BC5B8A203716F0001A97B6 /* Profile.storyboard */,
 				14216029200E6CFB00C6B746 /* ProfileViewController.swift */,
 			);
 			name = Profile;
@@ -274,7 +274,7 @@
 		14216027200E6CD400C6B746 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				147CA343200E6E9F00543180 /* Message.storyboard */,
+				14D8AB8A20371A3000F92CDB /* Message.storyboard */,
 				1421602B200E6D0800C6B746 /* MessageViewController.swift */,
 			);
 			name = Message;
@@ -465,11 +465,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D8AB8D20371C2200F92CDB /* Compose.storyboard in Resources */,
+				14D8AB8B20371A3000F92CDB /* Message.storyboard in Resources */,
+				14BC5B8B203716F0001A97B6 /* Profile.storyboard in Resources */,
 				14B765072021CFA000E7B63D /* ComposeViewController.xib in Resources */,
 				14215F95200DCBF000C6B746 /* LaunchScreen.storyboard in Resources */,
 				1413D681202E29A0003D0F61 /* PhotoBrowserViewCell.xib in Resources */,
-				147CA34A200E6FB500543180 /* Compose.storyboard in Resources */,
-				147CA34F200E702600543180 /* Profile.storyboard in Resources */,
 				14B21291202B6C5B00BCF00A /* Emoticons.bundle in Resources */,
 				14216032200E6DCC00C6B746 /* Home.storyboard in Resources */,
 				140AF8292010DB91000E9CE4 /* PopoverViewController.xib in Resources */,
@@ -479,7 +480,6 @@
 				14DEC92D2017662400F4CE5D /* OAuthViewController.xib in Resources */,
 				14215F90200DCBF000C6B746 /* Main.storyboard in Resources */,
 				147CA34C200E6FED00543180 /* Discover.storyboard in Resources */,
-				147CA345200E6E9F00543180 /* Message.storyboard in Resources */,
 				140E0926200F54950035150C /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +489,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		09EE4636B7DA5B00A2B28F5B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -508,7 +508,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weiboLite/Pods-weiboLite-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
@@ -617,30 +617,6 @@
 				14215F94200DCBF000C6B746 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		147CA343200E6E9F00543180 /* Message.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				147CA344200E6E9F00543180 /* Base */,
-			);
-			name = Message.storyboard;
-			sourceTree = "<group>";
-		};
-		147CA348200E6FB500543180 /* Compose.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				147CA349200E6FB500543180 /* Base */,
-			);
-			name = Compose.storyboard;
-			sourceTree = "<group>";
-		};
-		147CA34D200E702600543180 /* Profile.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				147CA34E200E702600543180 /* Base */,
-			);
-			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
