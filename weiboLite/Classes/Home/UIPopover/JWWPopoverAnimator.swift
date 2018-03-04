@@ -37,6 +37,7 @@ extension JWWPopoverAnimator : UIViewControllerTransitioningDelegate {
                                 source: UIViewController)
         -> UIPresentationController? {
             
+            //自定义返回的controller
             return JWWPresentationController(presentedViewController: presented, presenting: presenting)
     }
     
@@ -79,7 +80,7 @@ extension JWWPopoverAnimator : UIViewControllerAnimatedTransitioning {
         isPresented ? animationForPresentedView(transitionContext: transitionContext) : animationForDismissedView(transitionContext: transitionContext)
     }
     
-    ///自定义弹出动画
+    ///自定义弹出View
     func animationForPresentedView(transitionContext: UIViewControllerContextTransitioning) {
         //1.获取弹出的view
         let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
@@ -99,7 +100,7 @@ extension JWWPopoverAnimator : UIViewControllerAnimatedTransitioning {
         }
     }
     
-    ///自定义消失动画
+    ///自定义消失View
     func animationForDismissedView(transitionContext: UIViewControllerContextTransitioning) {
         //1.获取弹出的view
         let dismissedView = transitionContext.view(forKey: UITransitionContextViewKey.from)!
